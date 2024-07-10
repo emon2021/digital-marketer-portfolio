@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Http\Request;
 
 class LoginController extends Controller
 {
@@ -36,5 +37,24 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
         $this->middleware('auth')->only('logout');
+    }
+
+    public function login(Request $request)
+    {
+        $request->validate([
+            'email' => 'required|string|email',
+            'password' => 'required|string|min:6',
+        ]);
+
+        $credentials = $request->only('email', 'password');
+        if (auth()->attempt($credentials)) {
+            if(auth()->user()->is_admin == 1){
+                return redirect()->route('admin.index');
+            }else{
+                return redirect()->route('login');
+            }
+        }
+        return back()->with('error', 'Oppes! You have entered invalid credentials');
+
     }
 }

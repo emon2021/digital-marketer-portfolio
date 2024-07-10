@@ -34,11 +34,17 @@
     <img class="animation__shake" src="{{ asset('public/backend') }}/dist/img/AdminLTELogo.png" alt="AdminLTELogo" height="60" width="60">
   </div>
 
-
+@auth
   @include('layouts.admin-partial.topbar')
   @include('layouts.admin-partial.sidebar')
+@endauth
+  
   @yield('admin-content')
+  
+@auth
   @include('layouts.admin-partial.topbar')
+@endauth
+
 
 
  

@@ -9,6 +9,12 @@ class AdminController extends Controller
 {
     public function login_create()
     {
+        return view('admin.auth.login');
+    }
+
+    //  index
+    public function index()
+    {
         return view('dashboard');
     }
 }
