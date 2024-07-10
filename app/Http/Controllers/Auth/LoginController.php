@@ -26,7 +26,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/';
 
     /**
      * Create a new controller instance.
@@ -39,6 +39,7 @@ class LoginController extends Controller
         $this->middleware('auth')->only('logout');
     }
 
+    //  customized login system for admin
     public function login(Request $request)
     {
         $request->validate([
@@ -54,7 +55,8 @@ class LoginController extends Controller
                 return redirect()->route('login');
             }
         }
-        return back()->with('error', 'Oppes! You have entered invalid credentials');
+        return back()->with('error', 'Opps! You have entered invalid credentials');
 
     }
+
 }

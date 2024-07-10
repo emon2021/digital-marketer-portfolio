@@ -649,26 +649,34 @@
           </li>
           <li class="nav-header">LABELS</li>
           <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon far fa-circle text-danger"></i>
-              <p class="text">Important</p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon far fa-circle text-warning"></i>
-              <p>Warning</p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="#" class="nav-link" >
               <i class="nav-icon far fa-circle text-info"></i>
-              <p>Informational</p>
+              <p>Change Password</p>
             </a>
           </li>
+         
+          <li class="nav-item">
+            <a href="#" class="nav-link" onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+              <i class="nav-icon far fa-circle text-danger"></i>
+              <p class="text">Logout</p>
+            </a>
+          </li>
+          <form id="logout-form" action="{{ route('admin.logout') }}" method="POST" class="d-none">
+            @csrf
+        </form>
+          
         </ul>
       </nav>
       <!-- /.sidebar-menu -->
     </div>
     <!-- /.sidebar -->
   </aside>
+
+
+
+  {{-- onclick="event.preventDefault();
+           document.getElementById('logout-form').submit();" --}}
+          {{-- <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+            @csrf
+        </form> --}}
