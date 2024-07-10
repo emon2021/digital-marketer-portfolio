@@ -26,7 +26,7 @@ class HeaderRequest extends FormRequest
             'image' => 'required|image|mimes:png,jpg,jpeg|max:5000',
             'greetings' => 'required|max:100|min:3|string',
             'name' => 'required|max:100|min:3|string',
-            'description' => 'required|max:255|min:3|string',
+            'description' => 'required|min:3|string',
             'resume' => 'required|mimes:pdf|max:5000',
         ];
     }

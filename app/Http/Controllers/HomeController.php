@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Header;
 
 class HomeController extends Controller
 {
@@ -15,6 +16,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $data['header'] = Header::first();
+        return view('home',$data);
     }
 }

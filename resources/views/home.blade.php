@@ -9,19 +9,19 @@
                     <div class="card border-0 bg-transparent p-2">
                         <div class="card-body">
                             <div class="title_name">
-                                <h5 class="title">Digital Marketer</h5>
+                                <h5 class="title">{{ $header->designation }}</h5>
                                 <h1 class="name">
-                                    <span class="hello_part">Hello, I'm</span>
+                                    <span class="hello_part">{{ $header->greetings }}</span>
                                     <br>
-                                    <span class="main_name">Ahmed Limon</span>
+                                    <span class="main_name">{{ $header->name }}</span>
                                 </h1>
                                 <p class="description mt-4">
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores placeat blanditiis praesentium ea exercitationem obcaecati qui voluptatum, eveniet repellendus adipisci cupiditate accusamus quas hic accusantium assumenda reiciendis temporibus dolor aliquam.
+                                    {{ str($header->description)->squish() }}
                                 </p>
                                 <div class="button_wrapper mt-5">
                                     <div class="row">
                                         <div class="col-md-6">
-                                            <a href="#" class="btn btn-outline-success text-uppercase rounded-5 w-100">Download Cv</a>
+                                            <a href="{{ $header->resume }}" class="btn btn-outline-success text-uppercase rounded-5 w-100" download="{{ $header->name.'.pdf' }}">Download Cv</a>
                                         </div>
                                         <div class="col-md-6 social_media d-flex justify-content-evenly">
                                             <a href="#" class="btn btn-outline-success text-light rounded-5" >
@@ -45,7 +45,7 @@
                 </div>
                 <div class="col-md-6 d-flex align-items-center justify-content-center">
                     <div class="img_wrapper">
-                        <img src="{{ asset('public/frontend') }}/assets/images/man.png" alt="">
+                        <img src="{{ $header->image }}" alt="">
                     </div>
                 </div>
             </div>

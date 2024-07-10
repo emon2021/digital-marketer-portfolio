@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('designation')->nullable();
             $table->string('greetings')->nullable();
             $table->string('name')->nullable();
-            $table->string('description')->nullable();
+            $table->text('description')->nullable();
             $table->string('resume')->nullable();
             $table->string('image')->nullable();
             $table->timestamps();
