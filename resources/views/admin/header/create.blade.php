@@ -5,9 +5,13 @@
         <div class="login-box-wrapper d-flex align-items-center justify-content-center mt-5 pt-5" style="width: 100%">
             <div class="login-box">
                 <!-- /.login-logo -->
+                {{-- @php
+                    $header = DB::table('headers')->first();
+                @endphp
+                <img src="{{ $header->image }}" width="70" alt=""> --}}
                 <div class="card card-outline card-success w-100" style="width: 40rem !important">
                   <div class="card-body">
-                    <form action="" method="post">
+                    <form action="{{route('header.store')}}" id="header" method="post">
                         @csrf
                       <div class="input-group mb-3">
                         <input type="text" class="form-control" name="designation" placeholder="Designation">
@@ -36,6 +40,7 @@
                       <div class="input-group mb-3">
                         <textarea name="description" placeholder="Description" id="" cols="70" rows="2"></textarea>
                       </div>
+                      <p>Upload Resume</p>
                       <div class="input-group mb-3">
                         <input type="file" name="resume" class="form-control">
                         <div class="input-group-append">
@@ -44,6 +49,7 @@
                           </div>
                         </div>
                       </div>
+                      <p>Upload Image</p>
                       <div class="input-group mb-3">
                         <input type="file" name="image" class="form-control" >
                         <div class="input-group-append">
@@ -72,3 +78,31 @@
     </div>
 </div>
 @endsection
+
+@push('script')
+    <script>
+        $(document).ready(function(){
+            $('#header').on('submit',function(e){
+                e.preventDefault();
+                let get_route = $(this).attr('action');
+                let form_data = new FormData($(this)[0]);
+                $.ajax({
+                    url: get_route,
+                    type: 'post',
+                    data: form_data,
+                    processData: false,
+                    contentType: false,
+                    success: function(response){
+                        toastr.success(response.success);
+                    },
+                    error: function(xhr,status,failed){
+                        let errors = xhr.responseJSON.errors;
+                        $.each(errors, function(key, value){
+                            toastr.error(value[0]);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+@endpush

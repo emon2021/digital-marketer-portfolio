@@ -25,6 +25,9 @@
   <link rel="stylesheet" href="{{ asset('public/backend') }}/plugins/daterangepicker/daterangepicker.css">
   <!-- summernote -->
   <link rel="stylesheet" href="{{ asset('public/backend') }}/plugins/summernote/summernote-bs4.min.css">
+  {{-- toastr.alert  --}}
+  <link rel="stylesheet" href="{{ asset('public/backend') }}/plugins/toastr/toastr.min.css">
+  @stack('css')
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">
@@ -92,5 +95,46 @@
 {{-- <script src="{{ asset('public/backend') }}/dist/js/demo.js"></script> --}}
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="{{ asset('public/backend') }}/dist/js/pages/dashboard.js"></script>
+<script src="{{ asset('public/backend') }}/plugins/toastr/toastr.min.js"></script>
+{{-- -----toaster alert message showing----- --}}
+<script>
+  @if (Session::has('message'))
+      var type = "{{ Session::get('alert-type', 'info') }}"
+      switch (type) {
+          case 'info':
+
+              toastr.options.timeOut = 10000;
+              toastr.info("{{ Session::get('message') }}");
+              var audio = new Audio('audio.mp3');
+              audio.play();
+              break;
+          case 'success':
+
+              toastr.options.timeOut = 10000;
+              toastr.success("{{ Session::get('message') }}");
+              var audio = new Audio('audio.mp3');
+              audio.play();
+
+              break;
+          case 'warning':
+
+              toastr.options.timeOut = 10000;
+              toastr.warning("{{ Session::get('message') }}");
+              var audio = new Audio('audio.mp3');
+              audio.play();
+
+              break;
+          case 'error':
+
+              toastr.options.timeOut = 10000;
+              toastr.error("{{ Session::get('message') }}");
+              var audio = new Audio('audio.mp3');
+              audio.play();
+
+              break;
+      }
+  @endif
+</script>
+@stack('script')
 </body>
 </html>
