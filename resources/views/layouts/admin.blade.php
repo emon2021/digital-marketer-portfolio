@@ -42,7 +42,7 @@
   @yield('admin-content')
   
 @auth
-  @include('layouts.admin-partial.topbar')
+  @include('layouts.admin-partial.footer')
 @endauth
 
 

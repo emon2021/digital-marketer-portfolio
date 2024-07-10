@@ -13,3 +13,9 @@ Route::controller(\App\Http\Controllers\Admin\AdminController::class)->group(fun
     Route::get('/admin/dashboard', 'index')->name('admin.index')->middleware(['auth','is_admin']);
     Route::get('/admin', 'login_create')->name('admin.login.create')->middleware('to_admin');
 });
+
+//___ header.controller ___
+Route::controller(\App\Http\Controllers\Admin\HeaderController::class)->middleware(['auth','is_admin'])->group(function () {
+   Route::get('/header/create', 'create')->name('header.create'); 
+   Route::post('/header/store','store')->name('header.store');
+});
