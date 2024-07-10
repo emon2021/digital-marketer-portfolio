@@ -17,5 +17,5 @@ Route::controller(\App\Http\Controllers\Admin\AdminController::class)->group(fun
 //___ header.controller ___
 Route::controller(\App\Http\Controllers\Admin\HeaderController::class)->middleware(['auth','is_admin'])->group(function () {
    Route::get('/header/create', 'create')->name('header.create'); 
-   Route::post('/header/store','store')->name('header.store');
+   Route::post('/header/update/{id}','update')->name('header.update');
 });
