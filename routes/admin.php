@@ -51,12 +51,12 @@ Route::middleware(['auth','is_admin'])->group(function () {
    });
    //___ education.controller ___
    Route::controller(\App\Http\Controllers\Admin\EducationController::class)->group(function () {
-      // Route::get('/education/index', 'index')->name('education.index');
-      // Route::post('/education/store','store')->name('education.store');
-      // Route::get('/education/edit','edit')->name('education.edit'); 
-      // Route::post('/education/update/{id}','update')->name('education.update');
-      // Route::delete('/education/destroy/{id}','destroy')->name('education.destroy');
-      // Route::get('/education/status','status')->name('education.status');
+      Route::get('/education/index', 'index')->name('education.index');
+      Route::post('/education/store','store')->name('education.store');
+      Route::get('/education/edit','edit')->name('education.edit'); 
+      Route::post('/education/update/{id}','update')->name('education.update');
+      Route::delete('/education/destroy/{id}','destroy')->name('education.destroy');
+      Route::get('/education/status','status')->name('education.status');
       Route::get('/education/create','create')->name('education.create');
       Route::post('/education/ex-update/{id}','ex_update')->name('education.ex_update');
    });

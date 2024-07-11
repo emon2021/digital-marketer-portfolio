@@ -24,7 +24,7 @@
     <div class="container float-end" style="float:right;width:82%">
         <div class="row p-3">
             <div class="col-md-6 float-start">
-                <h3>Experiences</h3>
+                <h3>Education</h3>
             </div>
             
         </div>
@@ -33,7 +33,7 @@
                 <div class="card">
                     <div class="card-header">
                         <div class="row">
-                            <div class="col-md-6"><h3 class="card-title">All Experience List Here...</h3></div>
+                            <div class="col-md-6"><h3 class="card-title">All Education List Here...</h3></div>
                         <div class="col-md-6 float-end d-flex align-items-center justify-content-end">
                             <a href="#" class="btn btn-primary float-end" data-bs-toggle="modal" data-bs-target="#exampleModal">+  &nbsp;&nbsp; Add  </a>
                         </div>
@@ -45,8 +45,8 @@
                             <thead>
                                 <tr>
                                     <th>SL</th>
-                                    <th>Company Name</th>
-                                    <th>Designation</th>
+                                    <th>Institute Name</th>
+                                    <th>Degree</th>
                                     <th>Start Date</th>
                                     <th>End Date</th>
                                     <th>Status</th>
@@ -58,7 +58,7 @@
                             </tbody>
                         </table>
 
-                        {{-- add servic modal --}}
+                        {{-- add education modal --}}
   
                 <!-- Modal -->
                 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -69,10 +69,10 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
-                            <form action="{{ route('experience.store') }}" id="exStore" method="post" enctype="multipart/form-data">
+                            <form action="{{ route('education.store') }}" id="eduStore" method="post" >
                                 @csrf
                                 <div class="input-group mb-3">
-                                    <input type="text" name="company_name" placeholder="Company Name"
+                                    <input type="text" name="institute" placeholder="Institute Name"
                                         class="form-control cat_name " >
                                     <div class="input-group-append">
                                         <div class="input-group-text">
@@ -82,8 +82,8 @@
                                 </div>
                                 <div class="input-group mb-3">
                                    
-                                    <input type="text" name="designation"
-                                        class="form-control cat_name "  placeholder="Designation">
+                                    <input type="text" name="exam_name"
+                                        class="form-control cat_name "  placeholder="Degree">
                                     <div class="input-group-append">
                                         <div class="input-group-text">
                                             <span class="fas fa-envelope"></span>
@@ -92,7 +92,7 @@
                                 </div>
                                 <h6>Start Date</h6>
                                 <div class="input-group mb-3">
-                                    <input type="date" name="start_time"
+                                    <input type="date" name="start_date"
                                         class="form-control cat_name "  placeholder="Start Date">
                                     <div class="input-group-append">
                                         <div class="input-group-text">
@@ -102,7 +102,7 @@
                                 </div>
                                 <h6>End Date</h6>
                                 <div class="input-group mb-3">
-                                    <input type="date" name="end_time"
+                                    <input type="date" name="end_date"
                                         class="form-control cat_name "  placeholder="End Date">
                                     <div class="input-group-append">
                                         <div class="input-group-text">
@@ -130,7 +130,7 @@
                     <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Update Experience</h5>
+                        <h5 class="modal-title" id="exampleModalLabel">Update Education</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div id="modal_body">
@@ -187,7 +187,7 @@ crossorigin="anonymous" referrerpolicy="no-referrer"></script>
                 "searching": true,
                 //  getting the route using ajax and declare request type
                 "ajax": {
-                    "url": "{{ route('experience.index') }}",
+                    "url": "{{ route('education.index') }}",
                     "type": 'GET',
                 },
                 //  push data to all the table columns
@@ -198,20 +198,20 @@ crossorigin="anonymous" referrerpolicy="no-referrer"></script>
                         name: 'DT_RowIndex'
                     },
                     {
-                        data: 'company_name',
-                        name: 'company_name',
+                        data: 'institute',
+                        name: 'institute',
                     },
                     {
-                        data: 'designation',
-                        name: 'designation',
+                        data: 'exam_name',
+                        name: 'exam_name',
                     },
                     {
-                        data: 'start_time',
-                        name: 'start_time',
+                        data: 'start_date',
+                        name: 'start_date',
                     },
                     {
-                        data: 'end_time',
-                        name: 'end_time',
+                        data: 'end_date',
+                        name: 'end_date',
                     },
                     {
                         data: 'status',
@@ -237,8 +237,8 @@ crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 <script>
     $(document).ready(function() {
-        //  experience store ajax request
-          $('body').on('submit', '#exStore', function(e) {
+        //  education store ajax request
+          $('body').on('submit', '#eduStore', function(e) {
               e.preventDefault();
               let get_route = $(this).attr('action');
               let form_data = new FormData($(this)[0]);
@@ -251,7 +251,7 @@ crossorigin="anonymous" referrerpolicy="no-referrer"></script>
                   contentType: false,
                   success:function(response){
                      toastr.success(response.success);
-                     $('#exStore')[0].reset();
+                     $('#eduStore')[0].reset();
                      // reload table using yajra datatable
                      yTable.ajax.reload();
                     $('.btn-close').trigger('click');
@@ -265,12 +265,12 @@ crossorigin="anonymous" referrerpolicy="no-referrer"></script>
               });
           });
 
-          //  experience edit ajax request
+          //  education edit ajax request
           $('body').on('click', '.edit', function(e) {
               e.preventDefault();
               let get_id = $(this).data('id');
               $.ajax({
-                  url:"{{ route('experience.edit') }}",
+                  url:"{{ route('education.edit') }}",
                   type:'GET',
                   data:{
                       id:get_id
@@ -287,8 +287,8 @@ crossorigin="anonymous" referrerpolicy="no-referrer"></script>
               });
           });
 
-        //    experience update ajax request
-          $('body').on('submit', '#exUpdate', function(e) {
+        //    education update ajax request
+          $('body').on('submit', '#educationUpdate', function(e) {
               e.preventDefault();
               let get_route = $(this).attr('action');
               let form_data = new FormData($(this)[0]);
@@ -313,7 +313,7 @@ crossorigin="anonymous" referrerpolicy="no-referrer"></script>
               });
           });
 
-          //    experience delete ajax request
+          //    education delete ajax request
           $('body').on('click', '#delete_data', function(e) {
               e.preventDefault();
               let get_route = $(this).attr('href');
@@ -345,12 +345,12 @@ crossorigin="anonymous" referrerpolicy="no-referrer"></script>
               });
           });
 
-          //    change experience status
+          //    change education status
           $('body').on('click', '.status', function(e) {
               e.preventDefault();
               let get_id = $(this).data('id');
               $.ajax({
-                  url:"{{ route('experience.status') }}",
+                  url:"{{ route('education.status') }}",
                   type:'GET',
                   data:{
                       id:get_id,

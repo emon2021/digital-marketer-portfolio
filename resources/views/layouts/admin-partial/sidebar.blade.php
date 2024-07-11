@@ -84,7 +84,7 @@
               </li>
             </ul>
           </li>
-          <li class="nav-item @if(Request::url() == route('experience.index')) menu-is-openning menu-open @endif">
+          <li class="nav-item @if(Request::url() == route('experience.index')||Request::url() == route('education.index')) menu-is-openning menu-open @endif">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-copy"></i>
               <p>
@@ -100,7 +100,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="" class="nav-link ">
+                <a href="{{ route('education.index') }}" class="nav-link @if(Request::url() == route('education.index')) active @endif">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Educations</p>
                 </a>

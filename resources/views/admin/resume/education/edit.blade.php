@@ -1,8 +1,8 @@
 <div class="modal-body">
-    <form action="{{ route('experience.update',$ex->id) }}" id="exUpdate" method="post" >
+    <form action="{{ route('education.update',$education->id) }}" id="educationUpdate" method="post" >
         @csrf
         <div class="input-group mb-3">
-            <input type="text" name="company_name" value="{{ $ex->company_name }}" placeholder="Company Name"
+            <input type="text" name="institute" value="{{ $education->institute }}" placeholder="Institute Name"
                 class="form-control cat_name " >
             <div class="input-group-append">
                 <div class="input-group-text">
@@ -12,8 +12,8 @@
         </div>
         <div class="input-group mb-3">
            
-            <input type="text" name="designation"
-                class="form-control cat_name " value="{{ $ex->designation }}"  placeholder="Designation">
+            <input type="text" name="exam_name"
+                class="form-control cat_name " value="{{ $education->exam_name }}"  placeholder="Degree">
             <div class="input-group-append">
                 <div class="input-group-text">
                     <span class="fas fa-envelope"></span>
@@ -22,8 +22,8 @@
         </div>
         <h6>Start Date</h6>
         <div class="input-group mb-3">
-            <input type="date" name="start_time"
-                class="form-control cat_name " value="{{ $ex->start_time }}"  placeholder="Start Date">
+            <input type="date" name="start_date"
+                class="form-control cat_name " value="{{ $education->start_date }}"  placeholder="Start Date">
             <div class="input-group-append">
                 <div class="input-group-text">
                     <span class="fas fa-envelope"></span>
@@ -32,8 +32,8 @@
         </div>
         <h6>End Date</h6>
         <div class="input-group mb-3">
-            <input type="date" name="end_time"
-                class="form-control cat_name " value="{{ $ex->end_time  }}"  placeholder="End Date">
+            <input type="date" name="end_date"
+                class="form-control cat_name " value="{{ $education->end_date  }}"  placeholder="End Date">
             <div class="input-group-append">
                 <div class="input-group-text">
                     <span class="fas fa-envelope"></span>

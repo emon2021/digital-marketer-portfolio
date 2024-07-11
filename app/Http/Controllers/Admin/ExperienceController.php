@@ -63,7 +63,7 @@ class ExperienceController extends Controller
         return view('admin.resume.edit',compact('ex'));
     }
     //____ experience.update _____
-    public function update(Request $request)
+    public function update(Request $request,$id)
     {
         $request->validate([
             'start_time' => 'required|date',
@@ -72,7 +72,7 @@ class ExperienceController extends Controller
             'company_name' => 'required|max:255|string',
         ]);
         $data = $request->all();
-        Experience::find($request->id)->update($data);
+        Experience::find($id)->update($data);
         return response()->json([
             'status' => 200,
             'success' => 'Experience updated successfully',

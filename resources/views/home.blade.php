@@ -166,7 +166,7 @@
                                                     $start_time = Carbon\Carbon::parse($ex->start_time)->format('d M, Y');
                                                     $end_time = Carbon\Carbon::parse($ex->end_time)->format('d M, Y');
                                                 @endphp
-                                                {{ $start_time }} - {{ $end_time  }}
+                                                {{ $start_time }} - {{ ($ex->end_time == null) ? 'Present' : $end_time }}
                                             </h6>
                                             <h3>{{ $ex->designation }}</h3>
                                             <ul>
