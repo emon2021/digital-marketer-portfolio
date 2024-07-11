@@ -150,91 +150,33 @@
                     <!-- resume.experience  -->
                     <div id="tab-1" class="col-md-8 float-end px-5 resume_default resume_experience" >
                         <div class="resume_partial pb-4" style="color: var(--main-text-color);">
-                            <h1 class="partial_title">My Experience</h1>
+                            <h1 class="partial_title">{{ $ex_title->title }}</h1>
                             <p class="card_description">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti velit ipsum reiciendis?
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti velit ipsum reiciendis?
+                                {{ $ex_title->description }}
                             </p>
                         </div>
                         <div class="row overflow-y-scroll" id="resume_ex" style="height: 250px;">
+                            @foreach ($experiences as $ex)
                             <div class="col-md-6">
                                 <div class="ex_card mt-4">
                                     <div class="card ex_card_wrapper border-0">
                                         <div class="card-body ex_card_body"  style="color: var(--main-text-color);">
-                                            <h6>2023-Present</h6>
-                                            <h3>SEO Specialist</h3>
+                                            <h6>
+                                                @php
+                                                    $start_time = Carbon\Carbon::parse($ex->start_time)->format('d M, Y');
+                                                    $end_time = Carbon\Carbon::parse($ex->end_time)->format('d M, Y');
+                                                @endphp
+                                                {{ $start_time }} - {{ $end_time  }}
+                                            </h6>
+                                            <h3>{{ $ex->designation }}</h3>
                                             <ul>
-                                                <li>Kaizen IT Ltd.</li>
+                                                <li>{{ $ex->company_name }}</li>
                                             </ul>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-6">
-                                <div class="ex_card mt-4">
-                                    <div class="card ex_card_wrapper border-0">
-                                        <div class="card-body ex_card_body"  style="color: var(--main-text-color);">
-                                            <h6>2023-Present</h6>
-                                            <h3>SEO Specialist</h3>
-                                            <ul>
-                                                <li>Kaizen IT Ltd.</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="ex_card mt-4">
-                                    <div class="card ex_card_wrapper border-0">
-                                        <div class="card-body ex_card_body"  style="color: var(--main-text-color);">
-                                            <h6>2023-Present</h6>
-                                            <h3>SEO Specialist</h3>
-                                            <ul>
-                                                <li>Kaizen IT Ltd.</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="ex_card mt-4">
-                                    <div class="card ex_card_wrapper border-0">
-                                        <div class="card-body ex_card_body"  style="color: var(--main-text-color);">
-                                            <h6>2023-Present</h6>
-                                            <h3>SEO Specialist</h3>
-                                            <ul>
-                                                <li>Kaizen IT Ltd.</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="ex_card mt-4">
-                                    <div class="card ex_card_wrapper border-0">
-                                        <div class="card-body ex_card_body"  style="color: var(--main-text-color);">
-                                            <h6>2023-Present</h6>
-                                            <h3>SEO Specialist</h3>
-                                            <ul>
-                                                <li>Kaizen IT Ltd.</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="ex_card mt-4">
-                                    <div class="card ex_card_wrapper border-0">
-                                        <div class="card-body ex_card_body"  style="color: var(--main-text-color);">
-                                            <h6>2023-Present</h6>
-                                            <h3>SEO Specialist</h3>
-                                            <ul>
-                                                <li>Kaizen IT Ltd.</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            @endforeach
                         </div>
                     </div>
                     <!-- resume.education  -->

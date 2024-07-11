@@ -45,5 +45,7 @@ Route::middleware(['auth','is_admin'])->group(function () {
       Route::post('/experience/update/{id}','update')->name('experience.update');
       Route::delete('/experience/destroy/{id}','destroy')->name('experience.destroy');
       Route::get('/experience/status','status')->name('experience.status');
+      Route::get('/experience/create','create')->name('experience.create');
+      Route::post('/experience/ex-update','ex_update')->name('experience.ex_update');
    });
 });

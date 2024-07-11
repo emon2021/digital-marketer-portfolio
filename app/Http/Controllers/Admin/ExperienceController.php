@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Experience;
+use App\Models\ExperienceTitle;
 use Illuminate\Http\Request;
 use Yajra\DataTables\DataTables;
 
@@ -103,6 +104,26 @@ class ExperienceController extends Controller
         return response()->json([
             'status' => 200,
             'success' => 'Experience status changed successfully'
+        ]);
+    }
+    //____ experience.create _____
+    public function create()
+    {
+        $ex_title = ExperienceTitle::first();
+        return view('admin.resume.experience_create',compact('ex_title'));
+    }
+    //_____ experience.ex_update _____
+    public function ex_update(Request $request)
+    {
+        $request->validate([
+            'title' => 'required|max:255|string',
+            'description' => 'required|string|min:3'
+        ]);
+        $data = $request->all();
+        ExperienceTitle::first()->update($data);
+        return response()->json([
+            'status' => 200,
+            'success' => 'Experience title uploaded successfully',
         ]);
     }
 }

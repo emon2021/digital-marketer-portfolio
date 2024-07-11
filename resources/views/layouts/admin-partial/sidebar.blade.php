@@ -43,11 +43,11 @@
               </p>
             </a>
           </li>
-          <li class="nav-item @if(Request::url() == route('header.create') || Request::url() == route('services.create')|| Request::url() == route('resume.create')) menu-is-openning menu-open @endif">
+          <li class="nav-item @if(Request::url() == route('header.create') || Request::url() == route('services.create')|| Request::url() == route('resume.create')|| Request::url() == route('experience.create')) menu-is-openning menu-open @endif">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-copy"></i>
               <p>
-                Upload Contents
+                Upload Title Contents
                 <i class="fas fa-angle-left right"></i>
               </p>
             </a>
@@ -68,6 +68,12 @@
                 <a href="{{ route('resume.create') }}" class="nav-link @if(Request::url() == route('resume.create')) active @endif">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Resume Title</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{ route('experience.create') }}" class="nav-link @if(Request::url() == route('experience.create')) active @endif">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Experience Title</p>
                 </a>
               </li>
             </ul>
