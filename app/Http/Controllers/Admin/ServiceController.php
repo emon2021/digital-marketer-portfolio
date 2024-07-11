@@ -24,7 +24,7 @@ class ServiceController extends Controller
         $request->validate([
             'top_title' => 'required|min:3|max:255|string',
             'mid_title' => 'required|min:3|max:255|string',
-            'bottom_title' => 'required|min:3|max:255|string',
+            'bottom_title' => 'nullable|min:3|max:255|string',
         ]);
         $service = ServiceTitle::find($id);
         $service->top_title = $request->top_title;

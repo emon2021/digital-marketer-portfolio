@@ -131,9 +131,9 @@
             <div class="row">
                 <div class="service_title col-md-12 text-center pb-5">
                     <div class="common_title_style">
-                        <h5> - Resume - </h5>
-                        <h1>Why Choose Me? </h1>
-                        <h1>Let's go to explore me! </h1>
+                        <h5> - {{ $resume_title->top_title }} - </h5>
+                        <h1>{{ $resume_title->mid_title }} </h1>
+                        <h1>{{ $resume_title->bottom_title }} </h1>
                     </div>
                 </div>
                 <div class="resume_wrapper">

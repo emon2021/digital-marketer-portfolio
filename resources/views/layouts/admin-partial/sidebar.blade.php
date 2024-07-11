@@ -43,7 +43,7 @@
               </p>
             </a>
           </li>
-          <li class="nav-item @if(Request::url() == route('header.create') || Request::url() == route('services.create')) menu-is-openning menu-open @endif">
+          <li class="nav-item @if(Request::url() == route('header.create') || Request::url() == route('services.create')|| Request::url() == route('resume.create')) menu-is-openning menu-open @endif">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-copy"></i>
               <p>
@@ -62,6 +62,47 @@
                 <a href="{{ route('services.create') }}" class="nav-link @if(Request::url() == route('services.create')) active @endif">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Service Title</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{ route('resume.create') }}" class="nav-link @if(Request::url() == route('resume.create')) active @endif">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Resume Title</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item @if(Request::url() == route('experience.index')) menu-is-openning menu-open @endif">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-copy"></i>
+              <p>
+                Resume Contents
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{ route('experience.index') }}" class="nav-link @if(Request::url() == route('experience.index')) active @endif">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Experiences</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="" class="nav-link ">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Educations</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="" class="nav-link ">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Skills</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="" class="nav-link ">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>About</p>
                 </a>
               </li>
             </ul>

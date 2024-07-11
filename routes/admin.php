@@ -32,4 +32,14 @@ Route::middleware(['auth','is_admin'])->group(function () {
       Route::delete('/services/destroy/{id}','destroy')->name('services.destroy');
       Route::get('/services/status','status')->name('services.status');
    });
+
+   //___ resume.controller ___
+   Route::controller(\App\Http\Controllers\Admin\ResumeController::class)->group(function () {
+      Route::get('/resume/create', 'create')->name('resume.create'); 
+      Route::post('/resume/update/{id}','update')->name('resume.update');
+   });
+   Route::controller(\App\Http\Controllers\Admin\ExperienceController::class)->group(function () {
+      Route::get('/experience/index', 'index')->name('experience.index');
+      Route::post('/experience/store','store')->name('experience.store'); 
+   });
 });
