@@ -25,5 +25,7 @@ Route::middleware(['auth','is_admin'])->group(function () {
    Route::controller(\App\Http\Controllers\Admin\ServiceController::class)->group(function () {
       Route::get('/services/create', 'create')->name('services.create');
       Route::post('/services/update/{id}','update')->name('services.update');
+      Route::get('/index','index')->name('services.index');
+      Route::post('/services/store','store')->name('services.store');
    });
 });

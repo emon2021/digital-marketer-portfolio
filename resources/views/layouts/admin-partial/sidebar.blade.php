@@ -66,6 +66,23 @@
               </li>
             </ul>
           </li>
+          <li class="nav-item ">
+            <a href="{{ route('services.index') }}" class="nav-link @if(Request::url() == route('services.index') ) active @endif">
+              <i class="nav-icon fas fa-copy"></i>
+              <p>
+               Services
+                
+              </p>
+            </a>
+            {{-- <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{ route('header.create') }}" class="nav-link @if(Request::url() == route('header.create')) active @endif">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Header</p>
+                </a>
+              </li>
+            </ul> --}}
+          </li>
           
           <li class="nav-item">
             <a href="#" class="nav-link">
