@@ -19,7 +19,7 @@ class ExperienceController extends Controller
                     $actionbtn = '<a href="javascript:void(0)"  data-id="'.$row->id.'" class="btn btn-primary edit" data-bs-target="#editModal" data-bs-toggle="modal" >
                 <i class="fas fa-edit"></i>
               </a>
-              <a href="'.route('services.destroy',$row->id).'" id="delete_data" class="btn btn-danger">
+              <a href="'.route('experience.destroy',$row->id).'" id="delete_data" class="btn btn-danger">
               <i class="fas fa-trash"></i>
             </a>';
                     return $actionbtn;
@@ -53,6 +53,56 @@ class ExperienceController extends Controller
         return response()->json([
             'status' => 200,
             'success' => 'Experience added successfully',
+        ]);
+    }
+    //____ experience.edit _____
+    public function edit(Request $request)
+    {
+        $ex = Experience::find($request->id);
+        return view('admin.resume.edit',compact('ex'));
+    }
+    //____ experience.update _____
+    public function update(Request $request)
+    {
+        $request->validate([
+            'start_time' => 'required|date',
+            'end_time' => 'nullable|date',
+            'designation' => 'required|max:255|string',
+            'company_name' => 'required|max:255|string',
+        ]);
+        $data = $request->all();
+        Experience::find($request->id)->update($data);
+        return response()->json([
+            'status' => 200,
+            'success' => 'Experience updated successfully',
+        ]);
+    }
+
+    //____ experience.destroy _____
+    public function destroy($id)
+    {
+        $ex = Experience::findOrFail($id);
+        $ex->delete();
+        return response()->json([
+            'status' => 204,
+            'success' => 'Experience deleted successfully'
+        ]);
+    }
+    //____ experience.status _____
+    public function status(Request $request)
+    {
+        $ex = Experience::findOrFail($request->id);
+        if($ex->status == 1)
+        {
+            $ex->status = 0;
+            $ex->update();
+        }else{
+            $ex->status = 1;
+            $ex->update();
+        }
+        return response()->json([
+            'status' => 200,
+            'success' => 'Experience status changed successfully'
         ]);
     }
 }

@@ -40,6 +40,10 @@ Route::middleware(['auth','is_admin'])->group(function () {
    });
    Route::controller(\App\Http\Controllers\Admin\ExperienceController::class)->group(function () {
       Route::get('/experience/index', 'index')->name('experience.index');
-      Route::post('/experience/store','store')->name('experience.store'); 
+      Route::post('/experience/store','store')->name('experience.store');
+      Route::get('/experience/edit','edit')->name('experience.edit'); 
+      Route::post('/experience/update/{id}','update')->name('experience.update');
+      Route::delete('/experience/destroy/{id}','destroy')->name('experience.destroy');
+      Route::get('/experience/status','status')->name('experience.status');
    });
 });

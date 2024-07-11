@@ -130,7 +130,7 @@
                     <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Update Room</h5>
+                        <h5 class="modal-title" id="exampleModalLabel">Update Experience</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div id="modal_body">
@@ -237,7 +237,7 @@ crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 <script>
     $(document).ready(function() {
-        //  servicesservices store ajax request
+        //  experience store ajax request
           $('body').on('submit', '#exStore', function(e) {
               e.preventDefault();
               let get_route = $(this).attr('action');
@@ -265,12 +265,12 @@ crossorigin="anonymous" referrerpolicy="no-referrer"></script>
               });
           });
 
-          //  servicesservices edit ajax request
+          //  experience edit ajax request
           $('body').on('click', '.edit', function(e) {
               e.preventDefault();
               let get_id = $(this).data('id');
               $.ajax({
-                  url:"{{ route('services.edit') }}",
+                  url:"{{ route('experience.edit') }}",
                   type:'GET',
                   data:{
                       id:get_id
@@ -287,8 +287,8 @@ crossorigin="anonymous" referrerpolicy="no-referrer"></script>
               });
           });
 
-        //    services update ajax request
-          $('body').on('submit', '#servicesUpdate', function(e) {
+        //    experience update ajax request
+          $('body').on('submit', '#exUpdate', function(e) {
               e.preventDefault();
               let get_route = $(this).attr('action');
               let form_data = new FormData($(this)[0]);
@@ -313,7 +313,7 @@ crossorigin="anonymous" referrerpolicy="no-referrer"></script>
               });
           });
 
-          //    services delete ajax request
+          //    experience delete ajax request
           $('body').on('click', '#delete_data', function(e) {
               e.preventDefault();
               let get_route = $(this).attr('href');
@@ -332,7 +332,7 @@ crossorigin="anonymous" referrerpolicy="no-referrer"></script>
                   processData: false,
                   contentType: false,
                   success:function(response){
-                     toastr.danger(response.success);
+                     toastr.warning(response.success);
                      // reloading table
                      yTable.ajax.reload();
                   },
@@ -345,12 +345,12 @@ crossorigin="anonymous" referrerpolicy="no-referrer"></script>
               });
           });
 
-          //    change services status
+          //    change experience status
           $('body').on('click', '.status', function(e) {
               e.preventDefault();
               let get_id = $(this).data('id');
               $.ajax({
-                  url:"{{ route('services.status') }}",
+                  url:"{{ route('experience.status') }}",
                   type:'GET',
                   data:{
                       id:get_id,
