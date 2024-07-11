@@ -58,9 +58,9 @@
             <div class="row">
                 <div class="service_title col-md-12 text-center pb-5">
                     <div class="common_title_style">
-                        <h5> - What The Special - </h5>
-                        <h1>Want to boost your business growth? </h1>
-                        <h1>Solution is here! </h1>
+                        <h5> - {{ $service_title->top_title }} - </h5>
+                        <h1>{{ $service_title->mid_title }} </h1>
+                        <h1>{{ $service_title->bottom_title }} </h1>
                     </div>
                 </div>
                 <div class="col-md-6">

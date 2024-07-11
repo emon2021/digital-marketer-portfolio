@@ -43,7 +43,7 @@
               </p>
             </a>
           </li>
-          <li class="nav-item @if(Request::url() == route('header.create')) menu-is-openning menu-open @endif">
+          <li class="nav-item @if(Request::url() == route('header.create') || Request::url() == route('services.create')) menu-is-openning menu-open @endif">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-copy"></i>
               <p>
@@ -56,6 +56,12 @@
                 <a href="{{ route('header.create') }}" class="nav-link @if(Request::url() == route('header.create')) active @endif">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Header</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{ route('services.create') }}" class="nav-link @if(Request::url() == route('services.create')) active @endif">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Service Title</p>
                 </a>
               </li>
             </ul>
