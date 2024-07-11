@@ -43,7 +43,7 @@
               </p>
             </a>
           </li>
-          <li class="nav-item @if(Request::url() == route('header.create')|| Request::url()== route('about.title_create') || Request::url() == route('services.create')|| Request::url() == route('resume.create')|| Request::url() == route('experience.create')) menu-is-openning menu-open @endif">
+          <li class="nav-item @if(Request::url() == route('header.create')|| Request::url()==route('education.create') || Request::url()== route('about.title_create')|| Request::url()==route('testimonial.create') || Request::url() == route('services.create')|| Request::url() == route('resume.create')|| Request::url() == route('experience.create')) menu-is-openning menu-open @endif">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-copy"></i>
               <p>
@@ -88,6 +88,12 @@
                   <p>About Title</p>
                 </a>
               </li>
+              <li class="nav-item">
+                <a href="{{ route('testimonial.create') }}" class="nav-link @if(Request::url() == route('testimonial.create')) active @endif">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Testimonial Title</p>
+                </a>
+              </li>
             </ul>
           </li>
           <li class="nav-item @if(Request::url() == route('experience.index')||Request::url() == route('about.create')||Request::url() == route('education.index')) menu-is-openning menu-open @endif">
@@ -130,17 +136,16 @@
               <i class="nav-icon fas fa-copy"></i>
               <p>
                Services
-                
               </p>
             </a>
-            {{-- <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="{{ route('header.create') }}" class="nav-link @if(Request::url() == route('header.create')) active @endif">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Header</p>
-                </a>
-              </li>
-            </ul> --}}
+          </li>
+          <li class="nav-item ">
+            <a href="{{ route('testimonial.index') }}" class="nav-link @if(Request::url() == route('testimonial.index') ) active @endif">
+              <i class="nav-icon fas fa-copy"></i>
+              <p>
+               Testimonial
+              </p>
+            </a>
           </li>
           
           <li class="nav-item">

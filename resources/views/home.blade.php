@@ -450,64 +450,28 @@
             <div class="row">
                 <div class="service_title col-md-12 text-center pb-5">
                     <div class="common_title_style">
-                        <h5> - Testimonial - </h5>
-                        <h1>What client say about me? </h1>
+                        <h5> - {{ $testi_title->testi_title }} - </h5>
+                        <h1>{{ $testi_title->testi_description }} </h1>
+                        <h1>{{ $testi_title->testi_description_2 }} </h1>
                     </div>
                 </div>
                 <!-- testimonial.carousel  -->
                 <div class="col-md-12">
                     <div id="testimonial-slider" class="owl-carousel owl-theme">
+                        @foreach($testimonials as $testimonial)
                         <div class="testimonial">
                             <div class="testimonial_content">
                                 <div class="testimonial_icon">
                                     <i class="fa fa-quote-left"></i>
                                 </div>
                                 <p class="testimonial_description">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent bibendum dolor sit amet eros imperdiet, sit amet hendrerit nisi vehicula.
+                                    {{ $testimonial->description  }}
                                 </p>
                             </div>
-                            <h3 class="testimonial_title">Imran</h3>
-                            <span class="testimonial_post">Digital Marketer</span>
+                            <h3 class="testimonial_title">{{ $testimonial->name }}</h3>
+                            <span class="testimonial_post">{{ $testimonial->designation }}</span>
                         </div>
-    
-                        <div class="testimonial">
-                            <div class="testimonial_content">
-                                <div class="testimonial_icon">
-                                    <i class="fa fa-quote-left"></i>
-                                </div>
-                                <p class="testimonial_description">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent bibendum dolor sit amet eros imperdiet, sit amet hendrerit nisi vehicula.
-                                </p>
-                            </div>
-                            <h3 class="testimonial_title">Sazzad</h3>
-                            <span class="testimonial_post">Web Designer</span>
-                        </div>
-    
-                        <div class="testimonial">
-                            <div class="testimonial_content">
-                                <div class="testimonial_icon">
-                                    <i class="fa fa-quote-left"></i>
-                                </div>
-                                <p class="testimonial_description">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent bibendum dolor sit amet eros imperdiet, sit amet hendrerit nisi vehicula.
-                                </p>
-                            </div>
-                            <h3 class="testimonial_title">Tanvir</h3>
-                            <span class="testimonial_post">SEO Specialist</span>
-                        </div>
-    
-                        <div class="testimonial">
-                            <div class="testimonial_content">
-                                <div class="testimonial_icon">
-                                    <i class="fa fa-quote-left"></i>
-                                </div>
-                                <p class="testimonial_description">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent bibendum dolor sit amet eros imperdiet, sit amet hendrerit nisi vehicula.
-                                </p>
-                            </div>
-                            <h3 class="testimonial_title">Emon</h3>
-                            <span class="testimonial_post">Web Developer</span>
-                        </div>
+                        @endforeach
                     </div>
                 </div>
                 <!-- testimonial.carousel.end -->

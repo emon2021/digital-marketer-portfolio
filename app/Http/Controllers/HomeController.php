@@ -13,6 +13,8 @@ use App\Models\Resume;
 use App\Models\ExperienceTitle;
 use App\Models\AboutTitle;
 use App\Models\About;
+use App\Models\Testimonial;
+use App\Models\TestimonialTitle;
 
 class HomeController extends Controller
 {
@@ -32,6 +34,8 @@ class HomeController extends Controller
         $data['edu_title'] = EduTitle::first();
         $data['about_title'] = AboutTitle::first();
         $data['about']  =   About::first();
+        $data['testi_title'] = TestimonialTitle::first();
+        $data['testimonials'] = Testimonial::select('id','name','designation','description')->where('status',1)->get();
         $data['services'] = Service::select('id','service_img','service_title','service_description')->where('status',1)->limit(4)->get();
         $data['experiences'] = Experience::select('id','start_time','end_time','designation','company_name')->where('status',1)->get();
         $data['educations'] = Education::select('id','start_date','end_date','exam_name','institute')->where('status',1)->get();

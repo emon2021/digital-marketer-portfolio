@@ -67,4 +67,15 @@ Route::middleware(['auth','is_admin'])->group(function () {
       Route::get('/about/create','create')->name('about.create');
       Route::post('/about/update/{id}','update')->name('about.update');
    });
+   //___ testimonial.controller ___
+   Route::controller(\App\Http\Controllers\Admin\TestimonialController::class)->group(function () {
+      Route::get('/testimonial/create','create')->name('testimonial.create');
+      Route::post('/testimonial/ex-update/{id}','ex_update')->name('testimonial.ex_update');
+      Route::get('/testimonial/index','index')->name('testimonial.index');
+      Route::post('/testimonial/store','store')->name('testimonial.store');
+      Route::get('/testimonial/edit','edit')->name('testimonial.edit');
+      Route::post('/testimonial/update/{id}','update')->name('testimonial.update');
+      Route::delete('/testimonial/destroy/{id}','destroy')->name('testimonial.destroy');
+      Route::get('/testimonial/status','status')->name('testimonial.status');
+   });
 });
