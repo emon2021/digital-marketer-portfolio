@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Education;
 use App\Models\EduTitle;
 use App\Models\Experience;
 use Illuminate\Http\Request;
@@ -29,6 +30,7 @@ class HomeController extends Controller
         $data['edu_title'] = EduTitle::first();
         $data['services'] = Service::select('id','service_img','service_title','service_description')->where('status',1)->limit(4)->get();
         $data['experiences'] = Experience::select('id','start_time','end_time','designation','company_name')->where('status',1)->get();
+        $data['educations'] = Education::select('id','start_date','end_date','exam_name','institute')->where('status',1)->get();
         return view('home',$data);
     }
 }

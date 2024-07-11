@@ -188,84 +188,27 @@
                             </p>
                         </div>
                         <div class="row overflow-y-scroll" id="resume_ex" style="height: 250px;">
+                            @foreach ($educations as $edu)
                             <div class="col-md-6">
                                 <div class="ex_card mt-4">
                                     <div class="card ex_card_wrapper border-0">
                                         <div class="card-body ex_card_body"  style="color: var(--main-text-color);">
-                                            <h6>2020-2024</h6>
-                                            <h3>Diploma In CST</h3>
+                                            <h6>
+                                                @php
+                                                    $start_date = Carbon\Carbon::parse($edu->start_date)->format('d M, Y');
+                                                    $end_date = Carbon\Carbon::parse($edu->end_date)->format('d M, Y');
+                                                @endphp
+                                                {{ $start_date }} - {{ ($edu->end_date == null) ? 'Present' : $end_date }}
+                                            </h6>
+                                            <h3>{{ $edu->exam_name }}</h3>
                                             <ul>
-                                                <li>Faridpur Polytechnic Institute.</li>
+                                                <li>{{ $edu->institute }}</li>
                                             </ul>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-6">
-                                <div class="ex_card mt-4">
-                                    <div class="card ex_card_wrapper border-0">
-                                        <div class="card-body ex_card_body"  style="color: var(--main-text-color);">
-                                            <h6>2013-2019</h6>
-                                            <h3>SSC</h3>
-                                            <ul>
-                                                <li>Sonatala High School.</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="ex_card mt-4">
-                                    <div class="card ex_card_wrapper border-0">
-                                        <div class="card-body ex_card_body"  style="color: var(--main-text-color);">
-                                            <h6>2022-2023</h6>
-                                            <h3>Programming In PHP</h3>
-                                            <ul>
-                                                <li>Kaizen IT Ltd.</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="ex_card mt-4">
-                                    <div class="card ex_card_wrapper border-0">
-                                        <div class="card-body ex_card_body"  style="color: var(--main-text-color);">
-                                            <h6>2023-Present</h6>
-                                            <h3>Web Development</h3>
-                                            <ul>
-                                                <li>Kaizen IT Ltd.</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="ex_card mt-4">
-                                    <div class="card ex_card_wrapper border-0">
-                                        <div class="card-body ex_card_body"  style="color: var(--main-text-color);">
-                                            <h6>2023-Present</h6>
-                                            <h3>Digital Marketing</h3>
-                                            <ul>
-                                                <li>Kaizen IT Ltd.</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="ex_card mt-4">
-                                    <div class="card ex_card_wrapper border-0">
-                                        <div class="card-body ex_card_body"  style="color: var(--main-text-color);">
-                                            <h6>2023-Present</h6>
-                                            <h3>SEO Specialist</h3>
-                                            <ul>
-                                                <li>Kaizen IT Ltd.</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            @endforeach
                         </div>
                     </div>
                     <!-- resume.skill -->

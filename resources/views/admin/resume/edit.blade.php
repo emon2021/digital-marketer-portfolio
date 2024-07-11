@@ -44,7 +44,7 @@
             <!-- /.col -->
             <div class="col-8"></div>
             <div class="col-4">
-                <button type="submit" class="btn btn-success btn-block" style="width: 8.7rem; margin-right:0.2rem">ADD</button>
+                <button type="submit" class="btn btn-success btn-block" style="width: 8.7rem; margin-right:0.2rem">UPDATE</button>
             </div>
             <!-- /.col -->
         </div>
