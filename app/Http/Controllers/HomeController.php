@@ -11,6 +11,8 @@ use App\Models\ServiceTitle;
 use App\Models\Service;
 use App\Models\Resume;
 use App\Models\ExperienceTitle;
+use App\Models\AboutTitle;
+use App\Models\About;
 
 class HomeController extends Controller
 {
@@ -28,6 +30,8 @@ class HomeController extends Controller
         $data['resume_title'] = Resume::first();
         $data['ex_title'] = ExperienceTitle::first();
         $data['edu_title'] = EduTitle::first();
+        $data['about_title'] = AboutTitle::first();
+        $data['about']  =   About::first();
         $data['services'] = Service::select('id','service_img','service_title','service_description')->where('status',1)->limit(4)->get();
         $data['experiences'] = Experience::select('id','start_time','end_time','designation','company_name')->where('status',1)->get();
         $data['educations'] = Education::select('id','start_date','end_date','exam_name','institute')->where('status',1)->get();

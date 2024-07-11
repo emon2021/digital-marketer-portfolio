@@ -60,4 +60,11 @@ Route::middleware(['auth','is_admin'])->group(function () {
       Route::get('/education/create','create')->name('education.create');
       Route::post('/education/ex-update/{id}','ex_update')->name('education.ex_update');
    });
+   //___ about.controller ___
+   Route::controller(\App\Http\Controllers\Admin\AboutController::class)->group(function () {
+      Route::get('/about/title-create','title_create')->name('about.title_create');
+      Route::post('/about/about-update/{id}','about_update')->name('about.about_update');
+      Route::get('/about/create','create')->name('about.create');
+      Route::post('/about/update/{id}','update')->name('about.update');
+   });
 });

@@ -334,10 +334,9 @@
                     <!-- resume.about.me  -->
                     <div id="tab-4" class="col-md-8 float-end px-5 resume_default d_none resume_about" >
                         <div class="resume_partial pb-4" style="color: var(--main-text-color);">
-                            <h1 class="partial_title">About Me</h1>
+                            <h1 class="partial_title">{{ $about_title->about_title }}</h1>
                             <p class="card_description">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti velit ipsum reiciendis?
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti velit ipsum reiciendis?
+                                {{ $about_title->about_description }}
                             </p>
                         </div>
                         <div class="row overflow-y-scroll" id="resume_ex" style="height: 250px;">
@@ -347,7 +346,7 @@
                                         <div class="card-body ex_card_body"  style="color: var(--main-text-color);">
                                             <div class="about_items">
                                                 <span style="color: rgb(140, 140, 140); margin-right: 5px;">Name: </span>
-                                                <span style="color: var(--main-text-color); font-size: 18px;"> Ahmed Limon</span>
+                                                <span style="color: var(--main-text-color); font-size: 18px;"> {{ $about->name }}</span>
                                             </div>
                                         </div>
                                     </div>
@@ -359,7 +358,7 @@
                                         <div class="card-body ex_card_body"  style="color: var(--main-text-color);">
                                             <div class="about_items">
                                                 <span style="color: rgb(140, 140, 140); margin-right: 5px;">Phone: </span>
-                                                <span style="color: var(--main-text-color); font-size: 18px;"> +880 18453-55609</span>
+                                                <span style="color: var(--main-text-color); font-size: 18px;"> +88 {{ $about->phone }}</span>
                                             </div>
                                         </div>
                                     </div>
@@ -371,7 +370,7 @@
                                         <div class="card-body ex_card_body"  style="color: var(--main-text-color);">
                                             <div class="about_items">
                                                 <span style="color: rgb(140, 140, 140); margin-right: 5px;">Experience: </span>
-                                                <span style="color: var(--main-text-color); font-size: 18px;"> 3+ Years.</span>
+                                                <span style="color: var(--main-text-color); font-size: 18px;"> {{ $about->experience }}</span>
                                             </div>
                                         </div>
                                     </div>
@@ -383,7 +382,7 @@
                                         <div class="card-body ex_card_body"  style="color: var(--main-text-color);">
                                             <div class="about_items">
                                                 <span style="color: rgb(140, 140, 140); margin-right: 5px;">WhatsApp: </span>
-                                                <span style="color: var(--main-text-color); font-size: 18px;"> +880 18453-88609</span>
+                                                <span style="color: var(--main-text-color); font-size: 18px;"> +88 {{ $about->whatsapp }}</span>
                                             </div>
                                         </div>
                                     </div>
@@ -395,7 +394,7 @@
                                         <div class="card-body ex_card_body"  style="color: var(--main-text-color);">
                                             <div class="about_items">
                                                 <span style="color: rgb(140, 140, 140); margin-right: 5px;">Nationality: </span>
-                                                <span style="color: var(--main-text-color); font-size: 18px;"> Banladeshi.</span>
+                                                <span style="color: var(--main-text-color); font-size: 18px;"> {{ $about->nationality }}</span>
                                             </div>
                                         </div>
                                     </div>
@@ -407,7 +406,7 @@
                                         <div class="card-body ex_card_body"  style="color: var(--main-text-color);">
                                             <div class="about_items">
                                                 <span style="color: rgb(140, 140, 140); margin-right: 5px;">Email: </span>
-                                                <span style="color: var(--main-text-color); font-size: 18px;"> ahmedemon.dev24@gmail.com</span>
+                                                <span style="color: var(--main-text-color); font-size: 18px;"> {{ $about->email }}</span>
                                             </div>
                                         </div>
                                     </div>
@@ -419,7 +418,7 @@
                                         <div class="card-body ex_card_body"  style="color: var(--main-text-color);">
                                             <div class="about_items">
                                                 <span style="color: rgb(140, 140, 140); margin-right: 5px;">Freelance: </span>
-                                                <span style="color: var(--main-text-color); font-size: 18px;"> Available</span>
+                                                <span style="color: var(--main-text-color); font-size: 18px;"> {{ $about->freelance }}</span>
                                             </div>
                                         </div>
                                     </div>
@@ -431,7 +430,7 @@
                                         <div class="card-body ex_card_body"  style="color: var(--main-text-color);">
                                             <div class="about_items">
                                                 <span style="color: rgb(140, 140, 140); margin-right: 5px;">Languages: </span>
-                                                <span style="color: var(--main-text-color); font-size: 18px;"> English & Bangla</span>
+                                                <span style="color: var(--main-text-color); font-size: 18px;"> {{ $about->lang }}</span>
                                             </div>
                                         </div>
                                     </div>
