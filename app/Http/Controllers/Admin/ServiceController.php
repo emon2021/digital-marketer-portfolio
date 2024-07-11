@@ -49,7 +49,7 @@ class ServiceController extends Controller
                     $actionbtn = '<a href="javascript:void(0)"  data-id="'.$row->id.'" class="btn btn-primary edit" data-bs-target="#editModal" data-bs-toggle="modal" >
                 <i class="fas fa-edit"></i>
               </a>
-              <a href="#" id="delete_data" class="btn btn-danger">
+              <a href="'.route('services.destroy',$row->id).'" id="delete_data" class="btn btn-danger">
               <i class="fas fa-trash"></i>
             </a>';
                     return $actionbtn;
@@ -60,7 +60,14 @@ class ServiceController extends Controller
                 ->editColumn('service_description', function ($row) {
                     return substr($row->service_description,0,100);
                 })
-                ->rawColumns(['action','service_img'])
+                ->editColumn('status', function($row){
+                    if($row->status == 1){
+                        return '<span class="badge badge-success status" style="cursor:pointer;" data-id="'.$row->id.'">Active</span>';
+                    }else{
+                        return '<span class="badge badge-danger status"  style="cursor:pointer;" data-id="'.$row->id.'">Inactive</span>';
+                    }
+                })
+                ->rawColumns(['action','service_img','status'])
                 ->addIndexColumn()
                 ->make(true);
         }
@@ -89,6 +96,61 @@ class ServiceController extends Controller
         return response()->json([
             'status' => 200,
             'success' => 'Service content successfully uploaded',
+        ]);
+    }
+    //___ EDIT ___
+    public function edit(Request $request)
+    {
+        $service = Service::find($request->id);
+        return view('admin.services.edit',compact('service'));
+    }
+    //___ SERVICE UPDATE ___
+    public function service_update(Request $request)
+    {
+        $request->validate([
+            'service_img' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'service_title' => 'required|min:3|max:100|string',
+            'service_description' => 'required|min:3|max:255|string',
+        ]);
+        $service = Service::find($request->id);
+        if($request->hasFile('service_img'))
+        {
+            $file = $request->file('service_img');
+            $ext = $file->getClientOriginalExtension();
+            $filename = time().'.'.$ext;
+            $path = 'public/frontend/assets/images/uploads/services/';
+            $file->move($path,$filename);
+            $service->service_img = $path.$filename;
+        }
+        $service->service_title = $request->service_title;
+        $service->service_description = $request->service_description;
+        $service->update();
+        return response()->json([
+            'status' => 200,
+            'success' => 'Service content successfully updated',
+        ]);
+    }
+
+    //___ DESTROY  ____
+    public function destroy($id)
+    {
+        $service = Service::find($id);
+        $service->delete();
+        return response()->json([
+            'status' => 204,
+            'success' => 'Service content successfully deleted',
+        ]);
+    }
+    //_____status..update_____
+    public function status(Request $request)
+    {
+        $status = Service::findOrFail($request->id);
+        $status->update([
+            ($status->status == 1) ? $status->status = 0 : $status->status = 1
+        ]);
+        return response()->json([
+            'status' => 200,
+            'success' => 'Service status changed successfully',
         ]);
     }
 }

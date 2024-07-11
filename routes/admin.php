@@ -27,5 +27,9 @@ Route::middleware(['auth','is_admin'])->group(function () {
       Route::post('/services/update/{id}','update')->name('services.update');
       Route::get('/index','index')->name('services.index');
       Route::post('/services/store','store')->name('services.store');
+      Route::get('/services/edit','edit')->name('services.edit');
+      Route::post('/services/service-update/{id}','service_update')->name('service_update.update');
+      Route::delete('/services/destroy/{id}','destroy')->name('services.destroy');
+      Route::get('/services/status','status')->name('services.status');
    });
 });

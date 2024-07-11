@@ -20,7 +20,7 @@ class HomeController extends Controller
     {
         $data['header'] = Header::first();
         $data['service_title'] = ServiceTitle::first();
-        $data['services'] = Service::select('id','service_img','service_title','service_description')->limit(4)->get();
+        $data['services'] = Service::select('id','service_img','service_title','service_description')->where('status',1)->limit(4)->get();
         return view('home',$data);
     }
 }
