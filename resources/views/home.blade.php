@@ -63,20 +63,25 @@
                         <h1>{{ $service_title->bottom_title }} </h1>
                     </div>
                 </div>
-                <div class="col-md-6">
-                    <div class="card p-4 service_box bg-transparent ">
+                @foreach ($services as $key=>$service)
+                    
+                <div class="col-md-6 mt-4 mt-responsive">
+                    <div class="card p-4 service_box service_box_{{ ++$key }} bg-transparent ">
                         <div class="card-body">
                             <div class="card_icon" style="width: 8rem;">
-                                <img src="{{ asset('public/frontend') }}/assets/images/social-media-marketing.png" width="100%" alt="">
+                                <img src="{{ $service->service_img }}" width="100%" alt="">
                             </div>
-                            <h3 class="card_title pt-3 ">Social Media Marketing</h3>
+                            <h3 class="card_title pt-3 ">{{ $service->service_title }}</h3>
                             <p class="card_description">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis temporibus, dignissimos ipsam consectetur hic impedit ut totam natus nisi architecto dolor reprehenderit reiciendis quia, pariatur blanditiis eius earum odio eum.
+                               {{ $service->service_description }}
                             </p>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6">
+
+                @endforeach
+
+                {{-- <div class="col-md-6">
                     <div class="card p-4 service_box service_box_2 bg-transparent ">
                         <div class="card-body">
                             <div class="card_icon" style="width: 8rem;">
@@ -114,7 +119,7 @@
                             </p>
                         </div>
                     </div>
-                </div>
+                </div> --}}
             </div>
         </div>
      </section>
