@@ -113,14 +113,14 @@ class ExperienceController extends Controller
         return view('admin.resume.experience_create',compact('ex_title'));
     }
     //_____ experience.ex_update _____
-    public function ex_update(Request $request)
+    public function ex_update(Request $request,$id)
     {
         $request->validate([
             'title' => 'required|max:255|string',
             'description' => 'required|string|min:3'
         ]);
         $data = $request->all();
-        ExperienceTitle::first()->update($data);
+        ExperienceTitle::findOrFail($id)()->update($data);
         return response()->json([
             'status' => 200,
             'success' => 'Experience title uploaded successfully',

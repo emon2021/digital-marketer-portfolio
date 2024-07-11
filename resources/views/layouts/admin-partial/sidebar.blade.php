@@ -55,7 +55,7 @@
               <li class="nav-item">
                 <a href="{{ route('header.create') }}" class="nav-link @if(Request::url() == route('header.create')) active @endif">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Header</p>
+                  <p>Header Content</p>
                 </a>
               </li>
               <li class="nav-item">
@@ -74,6 +74,12 @@
                 <a href="{{ route('experience.create') }}" class="nav-link @if(Request::url() == route('experience.create')) active @endif">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Experience Title</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{ route('education.create') }}" class="nav-link @if(Request::url() == route('education.create')) active @endif">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Education Title</p>
                 </a>
               </li>
             </ul>

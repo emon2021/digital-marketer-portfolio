@@ -182,10 +182,9 @@
                     <!-- resume.education  -->
                     <div id="tab-2" class="col-md-8 float-end px-5 resume_default d_none resume_education" >
                         <div class="resume_partial pb-4" style="color: var(--main-text-color);">
-                            <h1 class="partial_title">My Education</h1>
+                            <h1 class="partial_title">{{ $edu_title->edu_title }}</h1>
                             <p class="card_description">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti velit ipsum reiciendis?
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti velit ipsum reiciendis?
+                                {{ $edu_title->edu_description }}
                             </p>
                         </div>
                         <div class="row overflow-y-scroll" id="resume_ex" style="height: 250px;">

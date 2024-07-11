@@ -38,6 +38,7 @@ Route::middleware(['auth','is_admin'])->group(function () {
       Route::get('/resume/create', 'create')->name('resume.create'); 
       Route::post('/resume/update/{id}','update')->name('resume.update');
    });
+   //___ experience.controller ___
    Route::controller(\App\Http\Controllers\Admin\ExperienceController::class)->group(function () {
       Route::get('/experience/index', 'index')->name('experience.index');
       Route::post('/experience/store','store')->name('experience.store');
@@ -46,6 +47,17 @@ Route::middleware(['auth','is_admin'])->group(function () {
       Route::delete('/experience/destroy/{id}','destroy')->name('experience.destroy');
       Route::get('/experience/status','status')->name('experience.status');
       Route::get('/experience/create','create')->name('experience.create');
-      Route::post('/experience/ex-update','ex_update')->name('experience.ex_update');
+      Route::post('/experience/ex-update/{$id}','ex_update')->name('experience.ex_update');
+   });
+   //___ education.controller ___
+   Route::controller(\App\Http\Controllers\Admin\EducationController::class)->group(function () {
+      // Route::get('/education/index', 'index')->name('education.index');
+      // Route::post('/education/store','store')->name('education.store');
+      // Route::get('/education/edit','edit')->name('education.edit'); 
+      // Route::post('/education/update/{id}','update')->name('education.update');
+      // Route::delete('/education/destroy/{id}','destroy')->name('education.destroy');
+      // Route::get('/education/status','status')->name('education.status');
+      Route::get('/education/create','create')->name('education.create');
+      Route::post('/education/ex-update/{id}','ex_update')->name('education.ex_update');
    });
 });
