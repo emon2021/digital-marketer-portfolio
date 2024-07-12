@@ -54,11 +54,11 @@
 </div>
 @endsection
 
-@push('script')
+@push('scripts')
     <script>
         $(document).ready(function(){
-            $('#resume_title').submit(,function(e){
-                e.preventDefault();
+            $('body').on('submit','#resume_title',function(event){
+                event.preventDefault();
                 let get_route = $(this).attr('action');
                 let form_data = new FormData($(this)[0]);
                 $.ajax({

@@ -119,8 +119,11 @@ class ExperienceController extends Controller
             'title' => 'required|max:255|string',
             'description' => 'required|string|min:3'
         ]);
-        $data = $request->all();
-        ExperienceTitle::findOrFail($id)()->update($data);
+       $experience = ExperienceTitle::find($id);
+       $experience->title = $request->title;
+       $experience->description = $request->description;
+       $experience->update();
+
         return response()->json([
             'status' => 200,
             'success' => 'Experience title uploaded successfully',

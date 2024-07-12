@@ -47,7 +47,7 @@ Route::middleware(['auth','is_admin'])->group(function () {
       Route::delete('/experience/destroy/{id}','destroy')->name('experience.destroy');
       Route::get('/experience/status','status')->name('experience.status');
       Route::get('/experience/create','create')->name('experience.create');
-      Route::post('/experience/ex-update/{$id}','ex_update')->name('experience.ex_update');
+      Route::post('/experience/ex-update/{id}','ex_update')->name('experience.ex_update');
    });
    //___ education.controller ___
    Route::controller(\App\Http\Controllers\Admin\EducationController::class)->group(function () {

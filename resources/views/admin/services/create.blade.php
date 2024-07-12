@@ -54,11 +54,13 @@
 </div>
 @endsection
 
-@push('script')
+@push('scripts')
+  
+
     <script>
         $(document).ready(function(){
-            $('#service_title').on('submit',function(e){
-                e.preventDefault();
+            $('body').on('submit','#service_title',function(event){
+                event.preventDefault();
                 let get_route = $(this).attr('action');
                 let form_data = new FormData($(this)[0]);
                 $.ajax({
@@ -80,4 +82,6 @@
             });
         });
     </script>
+
+    
 @endpush
