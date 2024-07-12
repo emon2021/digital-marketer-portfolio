@@ -21,19 +21,19 @@
                                 <div class="button_wrapper mt-5">
                                     <div class="row">
                                         <div class="col-md-6">
-                                            <a href="{{ $header->resume }}" class="btn btn-outline-success text-uppercase rounded-5 w-100" download="{{ $header->name.'.pdf' }}">Download Cv</a>
+                                            <a href="{{ $header->resume }}" target="_blank" class="btn btn-outline-success text-uppercase rounded-5 w-100" download="{{ $header->name.'.pdf' }}">Download Cv</a>
                                         </div>
                                         <div class="col-md-6 social_media d-flex justify-content-evenly">
-                                            <a href="#" class="btn btn-outline-success text-light rounded-5" >
+                                            <a href="{{ $setting->facebook }}" target="_blank" class="btn btn-outline-success text-light rounded-5" >
                                                 <i class="fa-brands fa-facebook-f"></i>
                                             </a>
-                                            <a href="#" class="btn btn-outline-success text-light rounded-5" >
+                                            <a href="{{ $setting->linkedin }}" target="_blank" class="btn btn-outline-success text-light rounded-5" >
                                                 <i class="fa-brands fa-linkedin-in"></i>
                                             </a>
-                                            <a href="#" class="btn btn-outline-success text-light rounded-5" >
+                                            <a href="{{ $setting->github }}" target="_blank" class="btn btn-outline-success text-light rounded-5" >
                                                 <i class="fa-brands fa-github"></i>
                                             </a>
-                                            <a href="#" class="btn btn-outline-success text-light rounded-5" >
+                                            <a href="{{ $setting->twitter }}" target="_blank" class="btn btn-outline-success text-light rounded-5" >
                                                 <i class="fa-brands fa-twitter"></i>
                                             </a>
                                         </div>
@@ -598,7 +598,7 @@
                 </div>
                 <div class="col-md-12">
                     <div class="email_button m-auto d-flex align-items-center justify-content-center">
-                        <a href="mailto:ahmedemon.dev24@gmail.com" class="btn btn-outline-success text-uppercase p-2 px-5 fs-4">say hi</a>
+                        <a href="mailto:{{ $about->email }}" class="btn btn-outline-success text-uppercase p-2 px-5 fs-4">say hi</a>
                     </div>
                 </div>
             </div>

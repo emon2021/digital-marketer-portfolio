@@ -17,6 +17,7 @@ use App\Models\Testimonial;
 use App\Models\TestimonialTitle;
 use App\Models\Blog;
 use App\Models\BlogTitle;
+use App\Models\Setting;
 
 class HomeController extends Controller
 {
@@ -38,6 +39,7 @@ class HomeController extends Controller
         $data['about']  =   About::first();
         $data['testi_title'] = TestimonialTitle::first();
         $data['blog_title'] = BlogTitle::first();
+        $data['setting'] = Setting::first();
         $data['blogs'] = Blog::select('id','user_id','blog_img','blog_title','blog_description')->where('blog_status',1)->limit(3)->get();
         $data['testimonials'] = Testimonial::select('id','name','designation','description')->where('status',1)->get();
         $data['services'] = Service::select('id','service_img','service_title','service_description')->where('status',1)->limit(4)->get();

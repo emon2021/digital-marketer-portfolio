@@ -89,4 +89,9 @@ Route::middleware(['auth','is_admin'])->group(function () {
       Route::delete('/blog/destroy/{id}','destroy')->name('blog.destroy');
       Route::get('/blog/status','status')->name('blog.status');
    });
+   //____ settings.controller ___
+   Route::controller(\App\Http\Controllers\Admin\SettingsController::class)->group(function () {
+      Route::get('/settings','create')->name('settings.create');
+      Route::post('/settings/update/{id}','update')->name('settings.update');
+   });
 });

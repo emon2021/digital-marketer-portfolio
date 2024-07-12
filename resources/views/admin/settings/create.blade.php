@@ -7,10 +7,38 @@
                 <!-- /.login-logo -->
                 <div class="card card-outline card-success w-100" style="width: 40rem !important">
                   <div class="card-body">
-                    <form action="{{ route('about.update',$about->id) }}" id="about" method="post">
+                    <form action="{{ route('settings.update',$settings->id) }}" id="settings" method="post" enctype="multipart/form-data">
                         @csrf
+                        <h6>Logo Frontend <font color="red">*</font></h6>
                       <div class="input-group mb-3">
-                        <input type="text" class="form-control" value="{{ $about->name }}" name="name" placeholder="Name">
+                        <input type="file" class="form-control" value="{{ $settings->front_logo }}" name="front_logo">
+                        <div class="input-group-append">
+                          <div class="input-group-text">
+                            <span class="fas fa-copy"></span>
+                          </div>
+                        </div>
+                      </div>
+                      <h6>Logo Backend <font color="red">*</font></h6>
+                      <div class="input-group mb-3">
+                        <input type="file" class="form-control" value="{{ $settings->back_logo }}" name="back_logo">
+                        <div class="input-group-append">
+                          <div class="input-group-text">
+                            <span class="fas fa-copy"></span>
+                          </div>
+                        </div>
+                      </div>
+                      <h6>Favicon <font color="red">*</font></h6>
+                      <div class="input-group mb-3">
+                        <input type="file" class="form-control" value="{{ $settings->favicon }}" name="favicon">
+                        <div class="input-group-append">
+                          <div class="input-group-text">
+                            <span class="fas fa-copy"></span>
+                          </div>
+                        </div>
+                      </div>
+                      <h5 style="color:#20BF6B">Social Links</h5>
+                      <div class="input-group mb-3">
+                        <input type="url"  class="form-control" value="{{ $settings->facebook }}" name="facebook" placeholder="Facebook Link">
                         <div class="input-group-append">
                           <div class="input-group-text">
                             <span class="fas fa-copy"></span>
@@ -18,7 +46,7 @@
                         </div>
                       </div>
                       <div class="input-group mb-3">
-                        <input type="number" class="form-control" value="{{ $about->phone }}" name="phone" placeholder="Phone">
+                        <input type="url"  class="form-control" value="{{ $settings->twitter }}" name="twitter" placeholder="Twitter Link">
                         <div class="input-group-append">
                           <div class="input-group-text">
                             <span class="fas fa-copy"></span>
@@ -26,7 +54,7 @@
                         </div>
                       </div>
                       <div class="input-group mb-3">
-                        <input type="number" class="form-control" value="{{ $about->whatsapp }}" name="whatsapp" placeholder="WhatsApp">
+                        <input type="url"  class="form-control" value="{{ $settings->instagram }}" name="instagram" placeholder="Instagram Link">
                         <div class="input-group-append">
                           <div class="input-group-text">
                             <span class="fas fa-copy"></span>
@@ -34,7 +62,7 @@
                         </div>
                       </div>
                       <div class="input-group mb-3">
-                        <input type="text" class="form-control" value="{{ $about->experience }}" name="experience" placeholder="Experience">
+                        <input type="url"  class="form-control" value="{{ $settings->linkedin }}" name="linkedin" placeholder="LinkedIn Link">
                         <div class="input-group-append">
                           <div class="input-group-text">
                             <span class="fas fa-copy"></span>
@@ -42,7 +70,7 @@
                         </div>
                       </div>
                       <div class="input-group mb-3">
-                        <input type="text" class="form-control" value="{{ $about->nationality }}" name="nationality" placeholder="Nationality">
+                        <input type="url"  class="form-control" value="{{ $settings->github }}" name="github" placeholder="Github Link">
                         <div class="input-group-append">
                           <div class="input-group-text">
                             <span class="fas fa-copy"></span>
@@ -50,23 +78,7 @@
                         </div>
                       </div>
                       <div class="input-group mb-3">
-                        <input type="text" class="form-control" value="{{ $about->email }}" name="email" placeholder="Email">
-                        <div class="input-group-append">
-                          <div class="input-group-text">
-                            <span class="fas fa-copy"></span>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="input-group mb-3">
-                        <input type="text" class="form-control" value="{{ $about->freelance }}" name="freelance" placeholder="Remote">
-                        <div class="input-group-append">
-                          <div class="input-group-text">
-                            <span class="fas fa-copy"></span>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="input-group mb-3">
-                        <input type="text" class="form-control" value="{{ $about->lang }}" name="lang" placeholder="Languages">
+                        <input type="url"  class="form-control" value="{{ $settings->youtube }}" name="youtube" placeholder="Youtube Link">
                         <div class="input-group-append">
                           <div class="input-group-text">
                             <span class="fas fa-copy"></span>
@@ -98,7 +110,7 @@
 
     <script>
         $(document).ready(function(){
-            $('body').on('submit','#about',function(e){
+            $('body').on('submit','#settings',function(e){
                 e.preventDefault();
                 let get_route = $(this).attr('action');
                 let form_data = new FormData($(this)[0]);

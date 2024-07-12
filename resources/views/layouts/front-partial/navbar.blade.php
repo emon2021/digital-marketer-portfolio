@@ -5,7 +5,7 @@
             <div class=" float-start logo" style="width: 3rem;">
                 <a href="#home" class="navbar-brand text-light" style="width: 5rem;">
                     
-                    <img src="{{ asset('public/frontend') }}/assets/images/logo/kaizen-logo.png" width="100%"  alt="">
+                    <img src="{{ $setting->front_logo }}" width="100%"  alt="">
                 </a>
             </div>
             
