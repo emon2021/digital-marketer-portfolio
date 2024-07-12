@@ -78,4 +78,15 @@ Route::middleware(['auth','is_admin'])->group(function () {
       Route::delete('/testimonial/destroy/{id}','destroy')->name('testimonial.destroy');
       Route::get('/testimonial/status','status')->name('testimonial.status');
    });
+   //___ blog.controller ___
+   Route::controller(\App\Http\Controllers\Admin\BlogController::class)->group(function () {
+      Route::get('/blog/create','create')->name('blog.create');
+      Route::post('/blog/ex-update/{id}','ex_update')->name('blog.ex_update');
+      Route::get('/index/blog','index')->name('blog.index');
+      Route::post('/blog/store','store')->name('blog.store');
+      Route::get('/blog/edit','edit')->name('blog.edit');
+      Route::post('/blog/update/{id}','update')->name('blog.update');
+      Route::delete('/blog/destroy/{id}','destroy')->name('blog.destroy');
+      Route::get('/blog/status','status')->name('blog.status');
+   });
 });
