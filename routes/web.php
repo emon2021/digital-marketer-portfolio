@@ -17,3 +17,4 @@ use Illuminate\Support\Facades\Auth;
 Auth::routes(['register'=>false,'login'=>false]);
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/blog/view', [App\Http\Controllers\HomeController::class, 'view'])->name('blog.view');

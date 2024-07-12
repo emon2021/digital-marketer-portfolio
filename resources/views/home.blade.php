@@ -532,10 +532,10 @@
     <!-- article.blog  -->
      <section id="article_blog" class="common_style">
         <div class="container">
-            <div class="row">
+            <div class="row pb-5">
                 <div class="service_title col-md-12 text-center pb-5">
                     <div class="common_title_style">
-                        <h5> - {{ $blog_title->tilte }} - </h5>
+                        <h5> - {{ $blog_title->title }} - </h5>
                         <h1>{{ $blog_title->subtitle }}</h1>
                         <h1>{{ $blog_title->subtitle_2 }}</h1>
                     </div>
@@ -581,6 +581,10 @@
                     </div>
                     @endforeach
                 <!-- </div> -->
+                
+            </div>
+            <div class="d-flex justify-content-center align-items-center">
+                <a href="{{ route('blog.view') }}" class="btn btn-outline-success text-uppercase p-2 px-5 fs-6">view more -</a></a>
             </div>
         </div>
      </section>

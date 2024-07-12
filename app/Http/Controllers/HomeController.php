@@ -47,4 +47,12 @@ class HomeController extends Controller
         $data['educations'] = Education::select('id','start_date','end_date','exam_name','institute')->where('status',1)->get();
         return view('home',$data);
     }
+
+    //____ blog.view _____
+    public function view()
+    {
+        $data['blog_title'] = BlogTitle::first();
+        $data['blogs'] = Blog::select('id','user_id','blog_img','blog_title','blog_description')->where('blog_status',1)->paginate(18);
+        return view('frontend.blog',$data);
+    }
 }

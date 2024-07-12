@@ -3,14 +3,18 @@
     <div class="container">
         <div class="" style="width: 100%;">
             <div class=" float-start logo" style="width: 3rem;">
-                <a href="#home" class="navbar-brand text-light" style="width: 5rem;">
-                    
-                    <img src="{{ $setting->front_logo }}" width="100%"  alt="">
+                <a href="{{ route('home') }}" class="navbar-brand text-light" style="width: 5rem;">
+                    @php
+                        $setting = App\Models\Setting::first();
+                    @endphp
+                    <img src="{{ asset($setting->front_logo) }}" width="100%"  alt="">
                 </a>
             </div>
             
                 <div class="nav_items  d-flex justify-content-end align-items-end float-end collapse navbar-collapse">
+                    
                     <ul class="navbar-nav">
+                        @if(!Request::routeIs('blog.view'))
                         <li class="nav-item">
                             <a href="#home" class="nav-link ">Home</a>
                         </li>
@@ -23,15 +27,18 @@
                         <li class="nav-item">
                             <a href="#testimonial" class="nav-link ">Testimonials</a>
                         </li>
+                        @endif
                         <li class="nav-item">
                             <a href="#article_blog" class="nav-link ">Blogs</a>
                         </li>
+                        @if(!Request::routeIs('blog.view'))
                         <li class="nav-item">
                             <a href="#contact" class="nav-link ">Contact</a>
                         </li>
                         <li class="nav-item">
                             <a href="#" class="rounded-5 text-light btn btn-outline-success">Hire Me!</a>
                         </li>
+                        @endif
                     </ul>
                 </div>
         </div>
