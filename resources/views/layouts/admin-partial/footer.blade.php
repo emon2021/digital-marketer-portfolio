@@ -1,7 +1,5 @@
 <footer class="main-footer">
-    <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong>
-    All rights reserved.
-    <div class="float-right d-none d-sm-inline-block">
-      <b>Version</b> 3.2.0
+    <div class="text-center">
+      &copy; Developed by <a href="https://emon2021.github.io/portfolio.me/" target="_blank">Emon</a>
     </div>
   </footer>
