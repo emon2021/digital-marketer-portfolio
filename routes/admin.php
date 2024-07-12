@@ -5,13 +5,17 @@ use Illuminate\Support\Facades\Route;
 
 Route::controller(\App\Http\Controllers\Auth\LoginController::class)->group(function () {
    Route::post('/admin/login', 'login')->name('admin.login'); 
-   Route::post('/admin/logout', 'logout')->name('admin.logout');
+   
 });
 
 //___ ADMIN ROUTES ___
 Route::controller(\App\Http\Controllers\Admin\AdminController::class)->group(function () {
     Route::get('/admin/dashboard', 'index')->name('admin.index')->middleware(['auth','is_admin']);
     Route::get('/admin', 'login_create')->name('admin.login.create')->middleware('to_admin');
+    Route::post('/admin/logout', 'logout')->name('admin.logout');
+    //   change.password
+    Route::get('admin/password/change/view','change_pass')->name('password.change')->middleware(['auth','is_admin']);
+    Route::post('admin/password/change','update_pass')->name('password.update')->middleware(['auth','is_admin']);
 });
 
 //_____routes.which.is.protected.by.middleware.auth.is_admin_____

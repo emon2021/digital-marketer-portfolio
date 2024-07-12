@@ -176,7 +176,7 @@
           </li>
           <li class="nav-header">LABELS</li>
           <li class="nav-item">
-            <a href="#" class="nav-link" >
+            <a href="{{ route('password.change') }}" class="nav-link @if(Request::url() == route('password.change')) active @endif" >
               <i class="nav-icon far fa-circle text-info"></i>
               <p>Change Password</p>
             </a>

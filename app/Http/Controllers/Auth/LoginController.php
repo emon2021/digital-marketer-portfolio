@@ -52,7 +52,7 @@ class LoginController extends Controller
             if(auth()->user()->is_admin == 1){
                 return redirect()->route('admin.index');
             }else{
-                return redirect()->route('login');
+                return redirect()->route('home');
             }
         }
         return back()->with('error', 'Opps! You have entered invalid credentials');
