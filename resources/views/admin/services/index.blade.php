@@ -1,6 +1,9 @@
 @extends('layouts.admin')
 
 @section('admin-content')
+@push('title')
+<title>Admin|Services|Content</title>
+@endpush
 @push('css')
         {{-- ---------next and previous button custom css--------- --}}
         <style>

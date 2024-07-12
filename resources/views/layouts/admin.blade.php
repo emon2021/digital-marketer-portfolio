@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>AdminLTE 3 | Dashboard</title>
+ @stack('title')
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -27,6 +27,18 @@
   <link rel="stylesheet" href="{{ asset('public/backend') }}/plugins/summernote/summernote-bs4.min.css">
   {{-- toastr.alert  --}}
   <link rel="stylesheet" href="{{ asset('public/backend') }}/plugins/toastr/toastr.min.css">
+  <style>
+    .active{
+      background: #20BF6B !important;
+      color: #fff !important;
+    }
+    .card-outline{border-color: #20BF6B !important;}
+    .btn-primary,.btn-success{
+      background: #20BF6B !important; 
+      color: #fff !important; 
+      border-color: #20BF6B !important;
+    }
+  </style>
   @stack('css')
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">

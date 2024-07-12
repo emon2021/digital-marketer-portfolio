@@ -1,5 +1,8 @@
 @extends('layouts.admin')
 @section('admin-content')
+@push('title')
+<title>Admin|Login</title>
+@endpush
 {{-- login  --}}
 <div class="container">
     <div class="row">
@@ -8,7 +11,12 @@
                 <!-- /.login-logo -->
                 <div class="card card-outline card-primary">
                   <div class="card-header text-center">
-                    <a href="#" class="h1"><b>Admin</b>LTE</a>
+                    <a href="#" class="h1">
+                      @php
+                        $setting = App\Models\Setting::first();
+                      @endphp
+                      <img src="{{ asset($setting->back_logo)  }}" width="60" alt="">
+                    </a>
                   </div>
                   <div class="card-body">
                     <p class="login-box-msg">Sign in to start your session</p>

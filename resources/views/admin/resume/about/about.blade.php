@@ -1,5 +1,8 @@
 @extends('layouts.admin')
 @section('admin-content')
+@push('title')
+<title>Admin|Resume|About|Content</title>
+@endpush
 <div class="container" style="padding-top: 0 !important; padding-bottom: 7rem !important">
     <div class="row">
         <div class="login-box-wrapper d-flex align-items-center justify-content-center mt-5 pt-5" style="width: 100%">

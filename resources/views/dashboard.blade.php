@@ -1,5 +1,8 @@
 @extends('layouts.admin')
 @section('admin-content')
+@push('title')
+<title>Admin|Dashboard|Content</title>
+@endpush
  <!-- Content Wrapper. Contains page content -->
  <div class="content-wrapper">
     <!-- Content Header (Page header) -->

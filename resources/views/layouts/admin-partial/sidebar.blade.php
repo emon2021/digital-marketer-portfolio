@@ -128,12 +128,12 @@
                   <p>Educations</p>
                 </a>
               </li>
-              <li class="nav-item">
+              {{-- <li class="nav-item">
                 <a href="" class="nav-link ">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Skills</p>
                 </a>
-              </li>
+              </li> --}}
               <li class="nav-item">
                 <a href="{{ route('about.create') }}" class="nav-link @if(Request::url()==route('about.create')) active @endif">
                   <i class="far fa-circle nav-icon"></i>

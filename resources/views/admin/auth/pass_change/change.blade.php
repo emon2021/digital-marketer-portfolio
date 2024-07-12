@@ -1,5 +1,8 @@
 @extends('layouts.admin')
 @section('admin-content')
+@push('title')
+<title>Admin|Change|Password</title>
+@endpush
 {{-- login  --}}
 <div class="container">
     <div class="row">
