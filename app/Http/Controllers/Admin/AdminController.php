@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Models\Setting;
 
 class AdminController extends Controller
 {
@@ -16,7 +17,8 @@ class AdminController extends Controller
     //  index
     public function index()
     {
-        return view('dashboard');
+        $data['setting'] = Setting::first();
+        return view('dashboard',$data);
     }
     //  logout
     public function logout()
