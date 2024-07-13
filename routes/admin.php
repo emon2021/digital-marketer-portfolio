@@ -15,7 +15,7 @@ Route::controller(\App\Http\Controllers\Admin\AdminController::class)->group(fun
     Route::post('/admin/logout', 'logout')->name('admin.logout');
     //   change.password
     Route::get('admin/password/change/view','change_pass')->name('password.change')->middleware(['auth','is_admin']);
-    Route::post('admin/password/change','update_pass')->name('password.update')->middleware(['auth','is_admin']);
+    Route::post('admin/password/change','update_pass')->name('admin.password.update')->middleware(['auth','is_admin']);
 });
 
 //_____routes.which.is.protected.by.middleware.auth.is_admin_____

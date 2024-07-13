@@ -13,7 +13,7 @@
                   
                   <div class="card-body">
               
-                    <form action="{{ route('password.update') }}" method="post">
+                    <form action="{{ route('admin.password.update') }}" method="post">
                         @csrf
                       <div class="input-group mb-3">
                         <input type="password" class="form-control @error('current_password') is-invalid @enderror" name="current_password" placeholder="Current Password">
