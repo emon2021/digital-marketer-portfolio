@@ -5,29 +5,29 @@
     <header id="main_header" class="common_style">
         <div class="container">
             <div class="row">
-                <div class="col-md-6 ">
+                <div class="col-md-6 " data-aos="fade-right" data-aos-duration="500">
                     <div class="card border-0 bg-transparent p-2">
                         <div class="card-body">
                             <div class="title_name">
-                                <h5 class="title">{{ $header->designation }}</h5>
+                                <h5 class="title" data-aos="fade-down" data-aos-duration="500" data-aos-delay="200">{{ $header->designation }}</h5>
                                 <h1 class="name">
-                                    <span class="hello_part">{{ $header->greetings }}</span>
+                                    <span class="hello_part" data-aos="fade-right" data-aos-duration="500" data-aos-delay="400">{{ $header->greetings }}</span>
                                     <br>
-                                    <span class="main_name">{{ $header->name }}</span>
+                                    <span class="main_name" data-aos="fade-left" data-aos-duration="500" data-aos-delay="600">{{ $header->name }}</span>
                                 </h1>
-                                <p class="description mt-4">
+                                <p class="description mt-4" data-aos="fade-up" data-aos-duration="500" data-aos-delay="800">
                                     {{ str($header->description)->squish() }}
                                 </p>
                                 <div class="button_wrapper mt-5">
                                     <div class="row">
-                                        <div class="col-md-6">
+                                        <div class="col-md-6" data-aos="fade-right" data-aos-duration="500" data-aos-delay="200">
                                             <a href="{{ $header->resume }}" target="_blank" class="btn btn-outline-success text-uppercase rounded-5 w-100" download="{{ $header->name.'.pdf' }}">Download Cv</a>
                                         </div>
-                                        <div class="col-md-6 social_media d-flex justify-content-evenly">
+                                        <div class="col-md-6 social_media d-flex justify-content-evenly" data-aos="fade-left" data-aos-duration="500" data-aos-delay="200">
                                             <a href="{{ $setting->facebook }}" target="_blank" class="btn btn-outline-success text-light rounded-5" >
                                                 <i class="fa-brands fa-facebook-f"></i>
                                             </a>
-                                            <a href="{{ $setting->linkedin }}" target="_blank" class="btn btn-outline-success text-light rounded-5" >
+                                            <a href="{{ $setting->linkedin }}" target="_blank"  class="btn btn-outline-success text-light rounded-5" >
                                                 <i class="fa-brands fa-linkedin-in"></i>
                                             </a>
                                             <a href="{{ $setting->github }}" target="_blank" class="btn btn-outline-success text-light rounded-5" >
@@ -43,7 +43,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6 d-flex align-items-center justify-content-center">
+                <div class="col-md-6 d-flex align-items-center justify-content-center" data-aos="fade-left" data-aos-duration="500">
                     <div class="img_wrapper">
                         <img src="{{ $header->image }}" alt="">
                     </div>
@@ -56,16 +56,16 @@
      <section id="service_special" class="common_style">
         <div class="container">
             <div class="row">
-                <div class="service_title col-md-12 text-center pb-5">
+                <div class="service_title col-md-12 text-center pb-5" data-aos="fade-up" data-aos-duration="700">
                     <div class="common_title_style">
-                        <h5> - {{ $service_title->top_title }} - </h5>
-                        <h1>{{ $service_title->mid_title }} </h1>
-                        <h1>{{ $service_title->bottom_title }} </h1>
+                        <h5 data-aos="fade-up" data-aos-duration="500" data-aos-delay="200"> - {{ $service_title->top_title }} - </h5>
+                        <h1 data-aos="fade-up" data-aos-duration="500" data-aos-delay="400">{{ $service_title->mid_title }} </h1>
+                        <h1 data-aos="fade-up" data-aos-duration="500" data-aos-delay="600">{{ $service_title->bottom_title }} </h1>
                     </div>
                 </div>
                 @foreach ($services as $key=>$service)
                     
-                <div class="col-md-6 mt-4 mt-responsive">
+                <div class="col-md-6 mt-4 mt-responsive" data-aos="fade-up" data-aos-duration="500">
                     <div class="card p-4 service_box service_box_{{ ++$key }} bg-transparent ">
                         <div class="card-body">
                             <div class="card_icon" style="width: 8rem;">
@@ -129,15 +129,15 @@
      <section id="resume" class="common_style">
         <div class="container">
             <div class="row">
-                <div class="service_title col-md-12 text-center pb-5">
+                <div class="service_title col-md-12 text-center pb-5" data-aos="fade-up" data-aos-duration="500">
                     <div class="common_title_style">
-                        <h5> - {{ $resume_title->top_title }} - </h5>
-                        <h1>{{ $resume_title->mid_title }} </h1>
-                        <h1>{{ $resume_title->bottom_title }} </h1>
+                        <h5 data-aos="fade-up" data-aos-duration="500" data-aos-delay="200"> - {{ $resume_title->top_title }} - </h5>
+                        <h1 data-aos="fade-up" data-aos-duration="500" data-aos-delay="400">{{ $resume_title->mid_title }} </h1>
+                        <h1 data-aos="fade-up" data-aos-duration="500" data-aos-delay="600">{{ $resume_title->bottom_title }} </h1>
                     </div>
                 </div>
                 <div class="resume_wrapper">
-                    <div class="col-md-4 float-start" style="color: var(--main-text-color);">
+                    <div class="col-md-4 float-start" style="color: var(--main-text-color);" data-aos="fade-right" data-aos-duration="500">
                         <h1 class="resume_title">Why Hire Me?</h1>
                         <p class="resume_description card_description pb-3">
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti velit ipsum reiciendis?
@@ -148,8 +148,8 @@
                         <a href="" data-target = "tab-4" class="btn btn-success d-block fs-5 mb-4 tab common_resume about_me">About Me</a>
                     </div>
                     <!-- resume.experience  -->
-                    <div id="tab-1" class="col-md-8 float-end px-5 resume_default resume_experience" >
-                        <div class="resume_partial pb-4" style="color: var(--main-text-color);">
+                    <div id="tab-1" class="col-md-8 float-end px-5 resume_default resume_experience" data-aos="fade-left" data-aos-duration="500">
+                        <div class="resume_partial pb-4" style="color: var(--main-text-color);" data-aos="fade-up" data-aos-duration="500" data-aos-delay="800">
                             <h1 class="partial_title">{{ $ex_title->title }}</h1>
                             <p class="card_description">
                                 {{ $ex_title->description }}
@@ -157,7 +157,7 @@
                         </div>
                         <div class="row overflow-y-scroll" id="resume_ex" style="height: 250px;">
                             @foreach ($experiences as $ex)
-                            <div class="col-md-6">
+                            <div class="col-md-6" data-aos="fade-up" data-aos-duration="500" data-aos-delay="300">
                                 <div class="ex_card mt-4">
                                     <div class="card ex_card_wrapper border-0">
                                         <div class="card-body ex_card_body"  style="color: var(--main-text-color);">
@@ -180,8 +180,8 @@
                         </div>
                     </div>
                     <!-- resume.education  -->
-                    <div id="tab-2" class="col-md-8 float-end px-5 resume_default d_none resume_education" >
-                        <div class="resume_partial pb-4" style="color: var(--main-text-color);">
+                    <div id="tab-2" class="col-md-8 float-end px-5 resume_default d_none resume_education" data-aos="fade-left" data-aos-duration="500">
+                        <div class="resume_partial pb-4" style="color: var(--main-text-color);" data-aos="fade-down" data-aos-duration="500" data-aos-delay="300">
                             <h1 class="partial_title">{{ $edu_title->edu_title }}</h1>
                             <p class="card_description">
                                 {{ $edu_title->edu_description }}
@@ -189,7 +189,7 @@
                         </div>
                         <div class="row overflow-y-scroll" id="resume_ex" style="height: 250px;">
                             @foreach ($educations as $edu)
-                            <div class="col-md-6">
+                            <div class="col-md-6" data-aos="fade-up" data-aos-duration="500" data-aos-delay="300">
                                 <div class="ex_card mt-4">
                                     <div class="card ex_card_wrapper border-0">
                                         <div class="card-body ex_card_body"  style="color: var(--main-text-color);">
@@ -212,15 +212,15 @@
                         </div>
                     </div>
                     <!-- resume.skill -->
-                    <div id="tab-3" class="col-md-8 float-end px-5 resume_default d_none resume_skill" >
-                        <div class="resume_partial pb-4" style="color: var(--main-text-color);">
+                    <div id="tab-3" class="col-md-8 float-end px-5 resume_default d_none resume_skill" data-aos="fade-left" data-aos-duration="500" >
+                        <div class="resume_partial pb-4" style="color: var(--main-text-color);" data-aos="fade-down" data-aos-duration="500" data-aos-delay="300">
                             <h1 class="partial_title">My Skills</h1>
                             <p class="card_description">
                                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti velit ipsum reiciendis?
                                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti velit ipsum reiciendis?
                             </p>
                         </div>
-                        <div class="row overflow-y-scroll" id="resume_ex" style="height: 250px;">
+                        <div class="row overflow-y-scroll"  id="resume_ex" style="height: 250px;">
                             <div class="col-md-3">
                                 <div class="ex_card mt-4">
                                     <div class="card ex_card_wrapper border-0">
@@ -230,7 +230,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-3">
+                            <div class="col-md-3" data-aos="fade-up" data-aos-duration="500" data-aos-delay="300">
                                 <div class="ex_card mt-4">
                                     <div class="card ex_card_wrapper border-0">
                                         <div class="card-body ex_card_body text-center"  style="color: var(--main-text-color);">
@@ -239,7 +239,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-3">
+                            <div class="col-md-3" data-aos="fade-up" data-aos-duration="500" data-aos-delay="300">
                                 <div class="ex_card mt-4">
                                     <div class="card ex_card_wrapper border-0">
                                         <div class="card-body ex_card_body text-center"  style="color: var(--main-text-color);">
@@ -248,7 +248,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-3">
+                            <div class="col-md-3" data-aos="fade-up" data-aos-duration="500" data-aos-delay="300">
                                 <div class="ex_card mt-4">
                                     <div class="card ex_card_wrapper border-0">
                                         <div class="card-body ex_card_body text-center"  style="color: var(--main-text-color);">
@@ -257,7 +257,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-3">
+                            <div class="col-md-3" data-aos="fade-up" data-aos-duration="500" data-aos-delay="300">
                                 <div class="ex_card mt-4">
                                     <div class="card ex_card_wrapper border-0">
                                         <div class="card-body ex_card_body text-center"  style="color: var(--main-text-color);">
@@ -266,7 +266,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-3">
+                            <div class="col-md-3" data-aos="fade-up" data-aos-duration="500" data-aos-delay="300">
                                 <div class="ex_card mt-4">
                                     <div class="card ex_card_wrapper border-0">
                                         <div class="card-body ex_card_body text-center"  style="color: var(--main-text-color);">
@@ -275,7 +275,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-3">
+                            <div class="col-md-3" data-aos="fade-up" data-aos-duration="500" data-aos-delay="300">
                                 <div class="ex_card mt-4">
                                     <div class="card ex_card_wrapper border-0">
                                         <div class="card-body ex_card_body text-center"  style="color: var(--main-text-color);">
@@ -284,7 +284,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-3">
+                            <div class="col-md-3" data-aos="fade-up" data-aos-duration="500" data-aos-delay="300">
                                 <div class="ex_card mt-4">
                                     <div class="card ex_card_wrapper border-0">
                                         <div class="card-body ex_card_body text-center"  style="color: var(--main-text-color);">
@@ -293,7 +293,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-3">
+                            <div class="col-md-3" data-aos="fade-up" data-aos-duration="500" data-aos-delay="300">
                                 <div class="ex_card mt-4">
                                     <div class="card ex_card_wrapper border-0">
                                         <div class="card-body ex_card_body text-center"  style="color: var(--main-text-color);">
@@ -302,7 +302,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-3">
+                            <div class="col-md-3" data-aos="fade-up" data-aos-duration="500" data-aos-delay="300">
                                 <div class="ex_card mt-4">
                                     <div class="card ex_card_wrapper border-0">
                                         <div class="card-body ex_card_body text-center"  style="color: var(--main-text-color);">
@@ -311,7 +311,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-3">
+                            <div class="col-md-3" data-aos="fade-up" data-aos-duration="500" data-aos-delay="300">
                                 <div class="ex_card mt-4">
                                     <div class="card ex_card_wrapper border-0">
                                         <div class="card-body ex_card_body text-center"  style="color: var(--main-text-color);">
@@ -320,7 +320,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-3">
+                            <div class="col-md-3" data-aos="fade-up" data-aos-duration="500" data-aos-delay="300">
                                 <div class="ex_card mt-4">
                                     <div class="card  ex_card_wrapper border-0">
                                         <div class="card-body ex_card_body text-center"  style="color: var(--main-text-color);">
@@ -332,15 +332,15 @@
                         </div>
                     </div>
                     <!-- resume.about.me  -->
-                    <div id="tab-4" class="col-md-8 float-end px-5 resume_default d_none resume_about" >
-                        <div class="resume_partial pb-4" style="color: var(--main-text-color);">
+                    <div id="tab-4" class="col-md-8 float-end px-5 resume_default d_none resume_about" data-aos="fade-left" data-aos-duration="500" >
+                        <div class="resume_partial pb-4" style="color: var(--main-text-color);" data-aos="fade-down" data-aos-duration="500" data-aos-delay="300">
                             <h1 class="partial_title">{{ $about_title->about_title }}</h1>
                             <p class="card_description">
                                 {{ $about_title->about_description }}
                             </p>
                         </div>
                         <div class="row overflow-y-scroll" id="resume_ex" style="height: 250px;">
-                            <div class="col-md-6">
+                            <div class="col-md-6" data-aos="fade-up" data-aos-duration="500" data-aos-delay="300">
                                 <div class="ex_card mt-4">
                                     <div class="card ex_card_wrapper border-0 bg-transparent">
                                         <div class="card-body ex_card_body"  style="color: var(--main-text-color);">
@@ -352,7 +352,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-6" data-aos="fade-up" data-aos-duration="500" data-aos-delay="300">
                                 <div class="ex_card mt-4">
                                     <div class="card ex_card_wrapper border-0 bg-transparent">
                                         <div class="card-body ex_card_body"  style="color: var(--main-text-color);">
@@ -364,7 +364,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-6" data-aos="fade-up" data-aos-duration="500" data-aos-delay="300">
                                 <div class="ex_card mt-4">
                                     <div class="card ex_card_wrapper border-0 bg-transparent">
                                         <div class="card-body ex_card_body"  style="color: var(--main-text-color);">
@@ -376,7 +376,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-6" data-aos="fade-up" data-aos-duration="500" data-aos-delay="300">
                                 <div class="ex_card mt-4">
                                     <div class="card ex_card_wrapper border-0 bg-transparent">
                                         <div class="card-body ex_card_body"  style="color: var(--main-text-color);">
@@ -388,7 +388,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-6" data-aos="fade-up" data-aos-duration="500" data-aos-delay="300">
                                 <div class="ex_card mt-4">
                                     <div class="card ex_card_wrapper border-0 bg-transparent">
                                         <div class="card-body ex_card_body"  style="color: var(--main-text-color);">
@@ -400,7 +400,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-6" data-aos="fade-up" data-aos-duration="500" data-aos-delay="300">
                                 <div class="ex_card mt-4">
                                     <div class="card ex_card_wrapper border-0 bg-transparent">
                                         <div class="card-body ex_card_body"  style="color: var(--main-text-color);">
@@ -412,7 +412,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-6" data-aos="fade-up" data-aos-duration="500" data-aos-delay="300">
                                 <div class="ex_card mt-4">
                                     <div class="card ex_card_wrapper border-0 bg-transparent">
                                         <div class="card-body ex_card_body"  style="color: var(--main-text-color);">
@@ -424,7 +424,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-6" data-aos="fade-up" data-aos-duration="500" data-aos-delay="300">
                                 <div class="ex_card mt-4">
                                     <div class="card ex_card_wrapper border-0 bg-transparent">
                                         <div class="card-body ex_card_body"  style="color: var(--main-text-color);">
@@ -448,18 +448,18 @@
      <section id="testimonial" class="common_style">
         <div class="container">
             <div class="row">
-                <div class="service_title col-md-12 text-center pb-5">
+                <div class="service_title col-md-12 text-center pb-5" data-aos="fade-down" data-aos-duration="500" >
                     <div class="common_title_style">
-                        <h5> - {{ $testi_title->testi_title }} - </h5>
-                        <h1>{{ $testi_title->testi_description }} </h1>
-                        <h1>{{ $testi_title->testi_description_2 }} </h1>
+                        <h5 data-aos="fade-down" data-aos-duration="500" data-aos-delay="600"> - {{ $testi_title->testi_title }} - </h5>
+                        <h1 data-aos="fade-down" data-aos-duration="500" data-aos-delay="400">{{ $testi_title->testi_description }} </h1>
+                        <h1 data-aos="fade-down" data-aos-duration="500" data-aos-delay="200">{{ $testi_title->testi_description_2 }} </h1>
                     </div>
                 </div>
                 <!-- testimonial.carousel  -->
                 <div class="col-md-12">
                     <div id="testimonial-slider" class="owl-carousel owl-theme">
                         @foreach($testimonials as $testimonial)
-                        <div class="testimonial">
+                        <div class="testimonial " data-aos="fade-up" data-aos-duration="500" data-aos-delay="300">
                             <div class="testimonial_content">
                                 <div class="testimonial_icon">
                                     <i class="fa fa-quote-left"></i>
@@ -484,42 +484,42 @@
      <section id="client" class="common_style ">
         <div class="container">
             <div class="row">
-                <div class="col-md-12">
+                <div class="col-md-12" data-aos="fade-up" data-aos-duration="500" >
                     <div id="client_partner" class="client_wrapper d-flex align-items-center justify-content-center owl-carousel">
-                        <div class="client_logo">
+                        <div class="client_logo" data-aos="fade-up" data-aos-duration="500" data-aos-delay="300">
                             <i class="fa-solid fa-truck-fast"></i>
                         </div>
-                        <div class="client_logo">
+                        <div class="client_logo" data-aos="fade-up" data-aos-duration="500" data-aos-delay="300">
                             <i class="fa-brands fa-github"></i>
                         </div>
-                        <div class="client_logo">
+                        <div class="client_logo" data-aos="fade-up" data-aos-duration="500" data-aos-delay="300">
                             <i class="fa-brands fa-youtube"></i>
                         </div>
-                        <div class="client_logo">
+                        <div class="client_logo" data-aos="fade-up" data-aos-duration="500" data-aos-delay="300">
                             <i class="fa-solid fa-car"></i>
                         </div>
-                        <div class="client_logo">
+                        <div class="client_logo" data-aos="fade-up" data-aos-duration="500" data-aos-delay="300">
                             <i class="fa-brands fa-stripe"></i>
                         </div>
-                        <div class="client_logo">
+                        <div class="client_logo" data-aos="fade-up" data-aos-duration="500" data-aos-delay="300">
                             <i class="fa-brands fa-docker"></i>
                         </div>
-                        <div class="client_logo">
+                        <div class="client_logo" data-aos="fade-up" data-aos-duration="500" data-aos-delay="600">
                             <i class="fa-solid fa-barcode"></i>
                         </div>
-                        <div class="client_logo">
+                        <div class="client_logo" data-aos="fade-up" data-aos-duration="500" data-aos-delay="500">
                             <i class="fa-brands fa-stack-overflow"></i>
                         </div>
-                        <div class="client_logo">
+                        <div class="client_logo" data-aos="fade-up" data-aos-duration="500" data-aos-delay="400">
                             <i class="fa-brands fa-dropbox"></i>
                         </div>
-                        <div class="client_logo">
+                        <div class="client_logo" data-aos="fade-up" data-aos-duration="500" data-aos-delay="300">
                             <i class="fa-brands fa-dribbble"></i>
                         </div>
-                        <div class="client_logo">
+                        <div class="client_logo" data-aos="fade-up" data-aos-duration="500" data-aos-delay="200">
                             <i class="fa-brands fa-android"></i>
                         </div>
-                        <div class="client_logo">
+                        <div class="client_logo" data-aos="fade-up" data-aos-duration="500" data-aos-delay="100">
                             <i class="fa-solid fa-business-time"></i>
                         </div>
                     </div>
@@ -533,16 +533,16 @@
      <section id="article_blog" class="common_style">
         <div class="container">
             <div class="row pb-5">
-                <div class="service_title col-md-12 text-center pb-5">
+                <div class="service_title col-md-12 text-center pb-5" data-aos="fade-up" data-aos-duration="500">
                     <div class="common_title_style">
-                        <h5> - {{ $blog_title->title }} - </h5>
-                        <h1>{{ $blog_title->subtitle }}</h1>
-                        <h1>{{ $blog_title->subtitle_2 }}</h1>
+                        <h5 data-aos="fade-up" data-aos-duration="500" data-aos-delay="200"> - {{ $blog_title->title }} - </h5>
+                        <h1 data-aos="fade-up" data-aos-duration="500" data-aos-delay="400">{{ $blog_title->subtitle }}</h1>
+                        <h1 data-aos="fade-up" data-aos-duration="500" data-aos-delay="600">{{ $blog_title->subtitle_2 }}</h1>
                     </div>
                 </div>
                 <!-- <div class="blog_wrapper"> -->
                     @foreach($blogs as $blog)
-                    <div class="col-md-6 col-lg-4">
+                    <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-duration="500" data-aos-delay="300">
                         <div class="blog_card">
                             <div class="card bg-transparent" style="border:1px solid var(--main-color); border-radius:0;">
                                 <div class="card-body">
@@ -583,7 +583,7 @@
                 <!-- </div> -->
                 
             </div>
-            <div class="d-flex justify-content-center align-items-center">
+            <div class="d-flex justify-content-center align-items-center" data-aos="fade-right" data-aos-duration="500" data-aos-delay="300">
                 <a href="{{ route('blog.view') }}" class="btn btn-outline-success text-uppercase p-2 px-5 fs-6">view more -</a></a>
             </div>
         </div>
@@ -594,13 +594,13 @@
      <section id="contact" class="common_style">
         <div class="container">
             <div class="row">
-                <div class="service_title col-md-12 text-center pb-5">
+                <div class="service_title col-md-12 text-center pb-5" data-aos="fade-down" data-aos-duration="500" >
                     <div class="common_title_style">
-                        <h5> - Let's Connect - </h5>
-                        <h1>If you want to grow your business, get connected with me! </h1>
+                        <h5 data-aos="fade-down" data-aos-duration="500" data-aos-delay="400"> - Let's Connect - </h5>
+                        <h1 data-aos="fade-down" data-aos-duration="500" data-aos-delay="200">If you want to grow your business, get connected with me! </h1>
                     </div>
                 </div>
-                <div class="col-md-12">
+                <div class="col-md-12" data-aos="fade-up" data-aos-duration="500" data-aos-delay="300">
                     <div class="email_button m-auto d-flex align-items-center justify-content-center">
                         <a href="mailto:{{ $about->email }}" class="btn btn-outline-success text-uppercase p-2 px-5 fs-4">say hi</a>
                     </div>

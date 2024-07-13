@@ -16,6 +16,8 @@
     <!-- owl.carousel.css  -->
      <link rel="stylesheet" href="{{ asset('public/frontend') }}/resources/dist/assets/owl.carousel.min.css">
      <link rel="stylesheet" href="{{ asset('public/frontend') }}/resources/dist/assets/owl.theme.default.min.css">
+    <!-- aos.css -->
+    <link rel="stylesheet" href="{{ asset('public/frontend') }}/resources/css/aos.css">
     <!-- custom.style.css -->
     <link rel="stylesheet" href="{{ asset('public/frontend') }}/assets/css/style.css">
     <!-- custom.responsive.css  -->
@@ -38,10 +40,14 @@
 <script src="{{ asset('public/frontend') }}/resources/js/bootstrap.min.js"></script>
 <!-- owl.carousel.js -->
  <script src="{{ asset('public/frontend') }}/resources/dist/owl.carousel.min.js"></script>
+<!-- aos.js -->
+<script src="{{ asset('public/frontend') }}/resources/js/aos.js"></script>
 <!-- custom.index.js  -->
 <script src="{{ asset('public/frontend') }}/assets/js/index.js"></script>
 <script>
-    
+    AOS.init({
+    easing: 'ease-in-out'
+    });
 </script>
 
 </body>
